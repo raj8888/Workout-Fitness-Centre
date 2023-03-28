@@ -1,0 +1,91 @@
+Backend
+
+
+----- Faisal ----
+Models:
+Classes 
+User
+Trainer
+Order / Bookings
+Packages
+Signup/Login 
+
+
+
+----- Ajay ----
+1. Classes
+The class will create by the trainer
+Title, date and time(created at), capacity, activity type (yoga, Zumba, cardio, etc.), attendance type(online/offline), Paid/free (cost (150/free)), Location, Duration, Trainer, Image(Zumba, yoga, etc),
+Date and time( time and date of class)
+ID- Trainer
+
+
+----- Sarvesh ----
+2. User
+Name, email, password, country, Mobile, Role, 
+Classes array =[all the classes enrolled by user]
+Health info (height, weight, health problems)
+date and time(created at)
+
+
+----- Raj ----
+3. Trainer
+Name, email, password, country, Mobile, role
+Classes array =[class created by trainer]
+Health info (height, weight, health problems)
+Training Fields(expertise)
+date and time(created at)
+
+
+----- Ram ----
+4. Order
+date and time(created at)
+User_id
+Class id
+Price
+Package id
+
+
+
+Frontend
+
+----- Faisal ----
+Landing page
+Login 
+Signup
+Dashboard
+Pricing
+
+----- Ram ----
+About us
+Userr
+Dashboar
+Search classes
+All classes
+Search pacakges
+
+----- Raj ----
+My classes
+Edit profile
+Trainer
+Dashboard
+All classes page
+Edit classes page
+
+----- Sarvesh ----
+Add class page
+Add packages
+Edit packages 
+All packages
+All users page who are enrolled with a class
+Edit profile
+
+----- Ajay ----
+payments
+Admin dashboard
+All users
+All trainers
+All packages
+All calsses
+
+
