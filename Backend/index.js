@@ -3,15 +3,24 @@ var cors = require('cors')
 require('dotenv').config()
 const {connection}=require("./config/server")
 const {userRouter} = require("./routes/userRoute")
+const {authenticator} = require("./middlewares/authenticator")
 
 const app=express()
 app.use(cors())
 app.use(express.json())
 
-app.use("/user",userRouter);
 
 app.get("/",(req,res)=>{
     res.send("HOME PAGE")
+})
+
+app.use("/user",userRouter);
+
+
+app.use(authenticator)
+
+app.get("/check",(req,res)=>{
+    res.send("data PAGE")
 })
 
 

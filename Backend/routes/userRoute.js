@@ -2,12 +2,13 @@ const {UserModel} = require("../models/userModel");
 const express = require("express");
 const bcrypt = require('bcrypt');
 require('dotenv').config()
+const jwt = require("jsonwebtoken")
 
 const userRouter = express.Router();
 
 // User Page
 userRouter.get("/",(req,res)=>{
-    res.send("Users Page")
+    res.status(200).send({message:"User Page"})
 })
 
 // User - Get All Users
@@ -16,7 +17,7 @@ userRouter.get("/all", async (req,res)=>{
         let users = await UserModel.find();
         res.status(200).send({message:"User Data Fetched",users})
     }catch(error){
-        res.status(400).send({error:error.message})
+        res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
 
@@ -27,7 +28,7 @@ userRouter.get("/:id", async (req,res)=>{
         let user = await UserModel.findById(userID);
         res.status(200).send({message:"User Data Fetched",user})
     }catch(error){
-        res.status(400).send({error:error.message})
+        res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
 
@@ -42,7 +43,7 @@ userRouter.post("/register", async (req,res)=>{
         }else{
             bcrypt.hash(password, +process.env.salt, async function(err, hash) {
                 if(err){
-                    res.status(401).send({error:"Server Error"});
+                    res.status(401).send({message:"Server Error",error:err.message});
                     console.log(err)
                 }else{
                     let user = new UserModel({name, email, password:hash, phone, country, role});
@@ -62,13 +63,15 @@ userRouter.post("/login", async (req,res)=>{
     let {email, password} = req.body;
 
     try{
-        let user = await UserModel.find({email});
-        if(user.length==0){
+        let user = await UserModel.findOne({email});
+        if(!user){
             res.status(400).send({error:"User not found, Kindly register"})
         }else{
-            bcrypt.compare(password, user[0].password, async function(err, result) {
+            bcrypt.compare(password, user.password, async function(err, result) {
                 if(result){
-                    res.status(200).send({message:"User Logged In"})
+                    var token = jwt.sign({ userID: user._id, role:user.role }, process.env.secretKey, { expiresIn: 60 });
+                    var refresh_token = jwt.sign({ userID: user._id, role:user.role}, process.env.refreshSecretKey, { expiresIn: 180 });
+                    res.status(200).send({message:"User Logged In",token,refresh_token})
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});
                     console.log(err)
@@ -76,7 +79,7 @@ userRouter.post("/login", async (req,res)=>{
             });            
         }
     }catch(error){
-        res.status(400).send({error:error.message})
+        res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
 
@@ -88,9 +91,9 @@ userRouter.patch("/update/:id", async (req,res)=>{
 
     try{
         let user = await UserModel.findByIdAndUpdate(userID,payload);        
-        res.status(200).send({Message:"User data updated",user})
+        res.status(200).send({message:"User data updated",user})
     }catch(error){
-        res.status(400).send({error:error.message})
+        res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
 
@@ -100,9 +103,9 @@ userRouter.delete("/delete/:id", async (req,res)=>{
 
     try{
         let user = await UserModel.findByIdAndDelete(userID);        
-        res.status(200).send({Message:"User data deleted"})
+        res.status(200).send({message:"User data deleted"})
     }catch(error){
-        res.status(400).send({error:error.message})
+        res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
 
