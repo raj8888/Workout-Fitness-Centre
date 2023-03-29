@@ -2,6 +2,7 @@ const {OrdersModel} = require("../models/ordersModel");
 const express = require("express");
 require('dotenv').config()
 let {get_date,get_time}=require("../utils/utils")
+const {ClassesModel} = require("../models/ClassesModel");
 
 
 const ordersRouter = express.Router();
@@ -50,10 +51,22 @@ ordersRouter.post("/create", async (req,res)=>{
     payload.status=true;
     payload.createdDate=get_date();
     payload.createdTime=get_time();
+    let classID = payload.classID;
     try{
-        let order = new OrdersModel(payload);
-        await order.save();
-        res.status(200).send({message:"Order created",order})
+        let classes = await ClassesModel.findOne({_id:classID});
+        console.log(classes,classID)
+        if(classes.clients.includes(payload.userID)){            
+            res.status(401).send({message:"You have already registered for this class"})
+        }else{
+            if(classes.seatOccupied < classes.seatTotal){
+                let order = new OrdersModel(payload);
+                await order.save();
+                await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
+                res.status(200).send({message:"Order created",order})
+            }else{
+                res.status(401).send({message:"All seats are Booked"})
+            }
+        }
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
     }

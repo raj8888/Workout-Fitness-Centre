@@ -38,6 +38,8 @@ classesRouter.post("/create", async (req,res)=>{
     payload.createdDate=get_date();
     payload.createdTime=get_time();
     payload.trainerID=payload.userID
+    payload.seatOccupied=0;
+
     try{
         let classes = new ClassesModel(payload);
         await classes.save();
