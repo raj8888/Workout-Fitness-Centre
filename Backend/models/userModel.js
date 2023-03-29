@@ -12,7 +12,8 @@ const userSchema = mongoose.Schema({
     weight:Number,
     healthProblem:[{type:String}],
     classes:[{type:String}],
-    time: { type: Date, default: Date.now }
+    createdDate:String,
+    createdTime:String,
 },{
     versionKey:false
 })

@@ -4,6 +4,7 @@ require('dotenv').config()
 const {connection}=require("./config/server")
 const {userRouter} = require("./routes/userRouter")
 const {classesRouter} = require("./routes/classesRouter")
+const {ordersRouter} = require("./routes/ordersRouter")
 const {authenticator} = require("./middlewares/authenticator")
 
 const app=express()
@@ -16,10 +17,11 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/user",userRouter);
-app.use("/class",classesRouter);
-
-
 app.use(authenticator)
+app.use("/class",classesRouter);
+app.use("/order",ordersRouter);
+
+
 
 app.get("/check",(req,res)=>{
     res.send("data PAGE")
