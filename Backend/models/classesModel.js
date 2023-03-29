@@ -1,18 +1,21 @@
 const mongoose = require("mongoose");
 
 const classesSchema = mongoose.Schema({
-    name:String,
-    email:String,
-    password:String,
-    phone:String,
-    country:String,
-    role:{type:String,enum:["trainer","client"],default:"client"},
-    age:Number,
-    height:Number,
-    weight:Number,
-    healthProblem:[{type:String}],
-    classes:[{type:String}],
-    time: { type: Date, default: Date.now }
+    title:String,
+    seatTotal:Number,
+    seatOccupied:Number,
+    price:Number,
+    activity:String,
+    venue:{type:String,enum:["online","offline"],default:"online"},
+    locationOrLink:String,
+    Duration:String,
+    image:String,
+    trainerID:String,
+    createdDate:String,
+    createdTime:String,
+    classDate:String,
+    classTime:String,
+    clients:[{type:String}]
 },{
     versionKey:false
 })

@@ -3,6 +3,7 @@ const express = require("express");
 const bcrypt = require('bcrypt');
 require('dotenv').config()
 const jwt = require("jsonwebtoken")
+let {get_date,get_time}=require("../utils/utils")
 
 const userRouter = express.Router();
 
@@ -46,7 +47,9 @@ userRouter.post("/register", async (req,res)=>{
                     res.status(401).send({message:"Server Error",error:err.message});
                     console.log(err)
                 }else{
-                    let user = new UserModel({name, email, password:hash, phone, country, role});
+                    let createdDate=get_date();
+                    let createdTime=get_time();
+                    let user = new UserModel({name, email, password:hash, phone, country, role,createdDate,createdTime});
                     await user.save();
                     res.status(200).send({message:"User Registered",user})
                 }
@@ -69,8 +72,8 @@ userRouter.post("/login", async (req,res)=>{
         }else{
             bcrypt.compare(password, user.password, async function(err, result) {
                 if(result){
-                    var token = jwt.sign({ userID: user._id, role:user.role }, process.env.secretKey, { expiresIn: 60 });
-                    var refresh_token = jwt.sign({ userID: user._id, role:user.role}, process.env.refreshSecretKey, { expiresIn: 180 });
+                    var token = jwt.sign({ userID: user._id, role:user.role }, process.env.secretKey, { expiresIn:"7d"});
+                    var refresh_token = jwt.sign({ userID: user._id, role:user.role}, process.env.refreshSecretKey, { expiresIn:"30d" });
                     res.status(200).send({message:"User Logged In",token,refresh_token})
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});
@@ -86,9 +89,7 @@ userRouter.post("/login", async (req,res)=>{
 // User Update
 userRouter.patch("/update/:id", async (req,res)=>{
     let userID= req.params.id;
-    // let  {name, password, phone, country, age, height, weight, healthProblem, classes} = req.body;
     let payload = req.body;
-
     try{
         let user = await UserModel.findByIdAndUpdate(userID,payload);        
         res.status(200).send({message:"User data updated",user})
@@ -108,6 +109,8 @@ userRouter.delete("/delete/:id", async (req,res)=>{
         res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
+
+
 
 
 module.exports= {userRouter}

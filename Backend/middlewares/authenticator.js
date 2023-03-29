@@ -16,7 +16,7 @@ const authenticator = async (req,res,next)=>{
                                 if(err){
                                     res.send({msg:"Please login again",err:err.message})
                                 }else{
-                                    var new_token = jwt.sign({ userID: decoded.userID, role:decoded.role }, process.env.secretKey, { expiresIn: 60 });
+                                    var new_token = jwt.sign({ userID: decoded.userID, role:decoded.role }, process.env.secretKey, { expiresIn:"7d" });
                                     let decode= jwt.verify(new_token, process.env.secretKey, async function(err, decoded) {
                                         if(err){
                                             res.send({err:"Please Login First"});
