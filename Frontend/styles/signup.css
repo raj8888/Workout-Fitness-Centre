@@ -42,14 +42,21 @@
     width: 80%;
     margin: auto;
 }
-#gender{
+#select2{
     width: 80%;
+    margin: auto;
+}
+#gender{
+    width: 100%;
 }
 #pass{
     display: flex;
     gap: 20px;
     width: 80%;
     margin: auto;
+}
+#role{
+    width: 100%;
 }
 #pass{
     width: 80%;
@@ -110,6 +117,9 @@ button:hover{
     margin-left: -15px;
  }
 #country label{
+    margin-left: -10px;
+}
+#select label{
     margin-left: -10px;
 }
 #select label{
