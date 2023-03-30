@@ -6,7 +6,7 @@
     align-items: center;
     gap: 20px;
 }
-#left_img_part_signup, #left_img_part{
+#   , #left_img_part{
     width: 70%;
     height: auto;
 }
@@ -140,6 +140,9 @@ button:hover{
 #form1 button{
     margin-left: 0%;
 }
+#left_img_part, #left_img_part_signup{
+    margin-right: 0px;
+}
 
 }
 
@@ -156,7 +159,7 @@ button:hover{
     #form1 img{
         margin-left: -10px;
     }
-    #left_img_part{
+    #left_img_part, #left_img_part_signup{
         margin-right: 0px;
     }
 }
