@@ -1,0 +1,63 @@
+#container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+#logo{
+    width: 100px;
+    border: 5px solid #b8d8d4;;
+   border-radius: 50%;
+   margin-left: -20px;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#logo_img{
+   width: 25%;
+    margin: auto;
+}
+#signin{
+    width: 95%;
+    margin: auto;
+}
+#email,#password{
+    width: 90%;
+    margin: auto;
+}
+input{
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #b8d8d4;
+    color: gray;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.icons {
+    font-size: 38px;
+    cursor: pointer;
+    margin: auto;
+  }
+  .icons img {
+    width: 50px;
+  }
+@media screen and (max-width: 1080px) {
+ #signup_img{
+    display: none;
+ }
+ #form{
+    width: fit-content;
+    padding: 10px;
+ }
+}

@@ -1,0 +1,137 @@
+#container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    gap: 20px;
+}
+#logo{
+    width: 100px;
+    border: 5px solid #b8d8d4;;
+   border-radius: 50%;
+}
+#logo_img{
+   width: 25%;
+    margin: auto;
+}
+#form{
+    padding: 20px;
+}
+#name, #pass{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+#country select, #email input{
+    width: 240%;
+    margin: auto;
+}
+#select, #select2, #pass, #button , #country, #email{
+    width: 80%;
+    margin: auto;
+}
+#gender, #role{
+    width: 100%;
+}
+#signup{
+    width: 50%;
+}
+#signup input{
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+select{
+    padding: 5px;
+    border-radius: 3px;
+}
+button{
+    width: 250%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #b8d8d4;
+    color: gray;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#createClass input{
+    width: 100%;
+}
+#form1{
+    width: 30%;
+}
+#create{
+    width: 100%;
+}
+#form1 input{
+    padding: 5px;
+    border:1px solid gray;
+    border-radius: 3px;
+    width: 90%;
+    margin: auto;
+    margin-left: 3%;
+}
+#form1 select,#form1 label{
+    width: 90%;
+    margin-left: 3%;
+}
+
+@media screen and (max-width: 1080px) {
+ #signup_img{
+    display: none;
+ }
+ #form{
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+ }
+ #name,#pass{
+    width: 100%;
+ }
+ #email input{
+    width:240%;
+    margin-left: -16px;
+ }
+ #country input{
+    width:240%;
+    margin-left: -15px;
+ }
+ button{
+    margin-left: -15px;
+    width: 245%;
+ }
+ select{
+    margin-left: -15px;
+ }
+#select label, #email label, #country label{
+    margin-left: -10px;
+}
+#form1{
+    width:300px;
+    margin: auto;
+    padding: -20px;
+}
+#form1 button{
+    margin-left: 0%;
+}
+
+}
+
+@media screen and (max-width: 301px) {
+    #form1{
+        width:fit-content
+    }
+    #form1 input{
+        width:fit-content;
+    }
+    #logo_img img{
+        width: 80px;
+    }
+    #form1 img{
+        margin-left: -10px;
+    }
+}
