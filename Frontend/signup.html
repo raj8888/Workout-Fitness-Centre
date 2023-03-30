@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Create yout account</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <img src="./Images/Artboard-1.07f7761b.png" alt="" id="signup_img" >
+        </div>
+        <div id="form">
+            <div id="logo_img">
+                <img src="./Images/Workout (1).png" alt="" id="logo">
+               
+            </div>
+            <p style="text-align: center;color: #5e8e92;font-size: large;">Welcome to Workout Fitness Center </p>
+            <div id="signup">
+                <div id="name">
+                    <div>
+                        <label for="">First Name</label> <br> 
+                        <input type="text" placeholder="Enter first name" id="firstName">
+                    </div>
+                    <div>
+                        <label for="">Last Name</label> <br>
+                        <input type="text" placeholder="Enter last name" id="lastName">
+                    </div>
+                </div> <br>
+                <div id="email">
+                    <label for="">Enter Email Id</label> <br> 
+                    <input type="email" placeholder="Enter email" id="Email">
+                </div> <br>
+                <div id="pass">
+                    <div>
+                        <label for="">Password</label> <br> 
+                        <input type="text" type="password" id="password1">
+                        <i class="far fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer;"></i>
+                    </div>
+                    <div>
+                        <label for="">Retype Password</label> <br> 
+                        <input type="text" type="password" id="password2">
+                        <i class="far fa-eye" id="togglePassword2" style="margin-left: -30px; cursor: pointer;"></i>
+                    </div>
+                </div> <br>
+                <div id="country">
+                    <label for="">Country</label> <br> 
+                    <input type="text" placeholder="Enter country name" id="countryName">
+                </div> <br>
+                <div id="select">
+                    <label for="">Gender</label> <br> 
+                    <select  id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div> <br>
+                <div id="button">
+                    <button id="sign">Sign up</button>
+                </div>
+                <p style="text-align: center;color: #5e8e92;cursor: pointer;" id="login">Back to login</p>
+            </div> 
+        </div>
+        
+    </div>
+</body>
+</html>
+<script type="module" src="./scripts/signup.js"></script>
