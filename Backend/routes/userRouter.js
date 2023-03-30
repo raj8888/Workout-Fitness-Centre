@@ -72,8 +72,8 @@ userRouter.post("/login", async (req,res)=>{
         }else{
             bcrypt.compare(password, user.password, async function(err, result) {
                 if(result){
-                    var token = jwt.sign({ userID: user._id, role:user.role }, process.env.secretKey, { expiresIn:"7d"});
-                    var refresh_token = jwt.sign({ userID: user._id, role:user.role}, process.env.refreshSecretKey, { expiresIn:"30d" });
+                    var token = jwt.sign({ userID: user._id, role:user.role, name:user.name }, process.env.secretKey, { expiresIn:"7d"});
+                    var refresh_token = jwt.sign({ userID: user._id, role:user.role, name:user.name}, process.env.refreshSecretKey, { expiresIn:"30d" });
                     res.status(200).send({message:"User Logged In",token,refresh_token})
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});

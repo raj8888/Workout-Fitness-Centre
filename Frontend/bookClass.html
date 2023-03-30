@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Book Fitness Class</title>
+</head>
+<body>
+    <div id="container" style="width:95%">
+        <div id="left_img_part">
+            <img src="./Images/Artboard-1.07f7761b.png" alt="" id="signup_img" >
+        </div>
+        <div id="form1">
+            <div id="logo_img">
+                <img src="./Images/Workout (1).png" alt="" id="logo" > 
+            </div>
+            <p style="text-align: center;color: #5e8e92;font-size: large;">Book Fitness Class</p><br>
+
+            <div id="createClass">
+                <div id="top">
+                    <div>
+                        <label for="title">Class Title</label> <br> 
+                        <input type="text" placeholder="Enter class title" id="title" readonly>
+                    </div>
+                    <div>
+                        <label for="price">Class Price</label> <br> 
+                        <input type="number" placeholder="Enter class Price" id="price" readonly>
+                    </div>
+                </div> <br>
+                
+                <div id="top2">
+                    <div>
+                        <label for="trainerName">Trainer Name</label> <br> 
+                        <input type="text" placeholder="Trainer Name" id="trainerName" readonly>
+                    </div>
+                    <div>
+                        <label for="activity">Activity</label> <br> 
+                        <input type="text" placeholder="Activity" id="activity" readonly>
+                    </div>
+                </div> <br> 
+
+                <div id="mid">
+                    <div>
+                        <label for="seatTotal">Total Seats</label> <br> 
+                        <input type="number" placeholder="Total Seats" id="seatTotal" readonly>
+                    </div>
+                    <div>
+                        <label for="venue">Venue</label> <br> 
+                        <input type="text" placeholder="Venue" id="venue" readonly>
+                    </div>
+                </div> <br>
+
+                <div>
+                    <label for="locationOrLinkLocation/Link">Class Location/Link</label> <br> 
+                    <input type="text" placeholder="Class Location/Link" id="locationOrLink" readonly>
+                </div> <br>
+
+                <div id="bottom">
+                    <div>
+                        <label for="duration">Class Duration</label> <br> 
+                        <input type="text" placeholder="Class Duration" id="duration" readonly>
+                    </div>
+                    <div>
+                        <label for="date&time">Select Class Date & Time</label> <br> 
+                        <input type="datetime-local" placeholder="Enter class Date & Time" id="date&time">
+                    </div>
+                </div> <br>
+
+                <div id="button1">
+                    <button id="create">Book my Class</button>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+</body>
+</html>
+<script type="module" src="./scripts/createClass.js"></script>
