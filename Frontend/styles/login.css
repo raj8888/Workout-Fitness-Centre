@@ -44,6 +44,14 @@ button{
 button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.icons {
+    font-size: 38px;
+    cursor: pointer;
+    margin: auto;
+  }
+  .icons img {
+    width: 50px;
+  }
 @media screen and (max-width: 1080px) {
  #signup_img{
     display: none;

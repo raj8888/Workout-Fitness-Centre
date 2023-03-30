@@ -3,6 +3,7 @@
     justify-content: space-between;
     width: 90%;
     align-items: center;
+    gap: 20px;
 }
 #logo{
     width: 100px;
@@ -57,6 +58,28 @@ button{
 button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+#createClass input{
+    width: 100%;
+}
+#form1{
+    width: 30%;
+}
+#create{
+    width: 100%;
+}
+#form1 input{
+    padding: 5px;
+    border:1px solid gray;
+    border-radius: 3px;
+    width: 90%;
+    margin: auto;
+    margin-left: 3%;
+}
+#form1 select,#form1 label{
+    width: 90%;
+    margin-left: 3%;
+}
+
 @media screen and (max-width: 1080px) {
  #signup_img{
     display: none;
@@ -64,6 +87,7 @@ button:hover{
  #form{
     width: fit-content;
     padding: 10px;
+    margin: auto;
  }
  #name,#pass{
     width: 100%;
@@ -86,4 +110,28 @@ button:hover{
 #select label, #email label, #country label{
     margin-left: -10px;
 }
+#form1{
+    width:300px;
+    margin: auto;
+    padding: -20px;
+}
+#form1 button{
+    margin-left: 0%;
+}
+
+}
+
+@media screen and (max-width: 301px) {
+    #form1{
+        width:fit-content
+    }
+    #form1 input{
+        width:fit-content;
+    }
+    #logo_img img{
+        width: 80px;
+    }
+    #form1 img{
+        margin-left: -10px;
+    }
 }
