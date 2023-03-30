@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+}
+#container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 98%; */
+    /* height: 90%; */
+    margin: auto;
+}
+#left{
+    padding: 10px;
+    width: 65%;
+}
+#left img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+#right{
+    width: 35%;
+    padding: 30px;
+}
+#right img{
+    display: block  ;
+    width: 22%;
+    margin: auto;
+    border: 5px solid #b8d8d4;
+    border-radius: 50%;
+}
