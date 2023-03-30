@@ -16,51 +16,22 @@
 #form{
     padding: 20px;
 }
-#name{
+#name, #pass{
     display: flex;
     gap: 20px;
     width: 80%;
     margin: auto;
 }
-#country input{
+#country input, #email input{
     width: 240%;
     margin: auto;
 }
-#country{
-    width: 80%;
-    margin:auto;
-}
-#email input{
-   width: 240%;
-   margin: auto;
-}
-#email{
+#select, #select2, #pass, #button , #country, #email{
     width: 80%;
     margin: auto;
 }
-#select{
-    width: 80%;
-    margin: auto;
-}
-#select2{
-    width: 80%;
-    margin: auto;
-}
-#gender{
+#gender, #role{
     width: 100%;
-}
-#pass{
-    display: flex;
-    gap: 20px;
-    width: 80%;
-    margin: auto;
-}
-#role{
-    width: 100%;
-}
-#pass{
-    width: 80%;
-    margin: auto;
 }
 #signup{
     width: 50%;
@@ -73,10 +44,6 @@
 select{
     padding: 5px;
     border-radius: 3px;
-}
-#button{
-    width: 80%;
-    margin: auto;
 }
 button{
     width: 250%;
@@ -116,16 +83,7 @@ button:hover{
  select{
     margin-left: -15px;
  }
-#country label{
-    margin-left: -10px;
-}
-#select label{
-    margin-left: -10px;
-}
-#select label{
-    margin-left: -10px;
-}
-#email label{
+#select label, #email label, #country label{
     margin-left: -10px;
 }
 }
