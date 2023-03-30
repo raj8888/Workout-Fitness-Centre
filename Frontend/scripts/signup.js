@@ -13,7 +13,7 @@ submit.addEventListener("click",()=>{
         alert("All fields are mandatory")
     }
     else if(password.value !== password2.value){
-        alert("Both passworf should be similar")
+        alert("Both passwords should be similar.")
     }else{
         alert("Your account created succesfully")
     }

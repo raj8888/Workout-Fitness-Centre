@@ -14,7 +14,7 @@ const classesSchema = mongoose.Schema({
     createdDate:String,
     createdTime:String,
     classDate:String,
-    classTime:String,
+    classTime:String,             
     clients:[{type:String}]
 },{
     versionKey:false
