@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/userSearchClass.css">
+    <title>Search Classes</title>
+</head>
+<body>
+    <div id="middlediv">
+        <h2 id="searchTitle">Class Search</h2>
+
+        <div id="searchdiv">
+            <div id="mainsearchdiv">
+                <p>Tell us what you're looking for</p>
+                <input type="text" placeholder="Search for class here..." id="searchBox">
+                <button id="mainsearchbutton">Search</button>
+            </div>
+        </div>
+
+
+        <div id="filterinfo">
+
+            <div id="activitydiv">
+                <p>Activity </p>
+                <select name="activity" id="acttype">
+                    <option value="all">All Activities</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="dance">Dance</option>
+                    <option value="running">Running</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="yoga">Yoga</option>
+                    <option value="zumba">Zumba</option>
+                </select>
+            </div>
+            <div id="attendancediv">
+                <p>Attendence </p>
+                <select name="Attendence" id="atttype">
+                    <option value="all">All Classes</option>
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
+            </div>
+            <div id="locationdiv">
+                <p>Location</p>
+                <select name="location" id="location">
+                    <option value="all">All Locations</option>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="germany">Germany</option>
+                    <option value="india">India</option>
+                    <option value="singapore">Singapore</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="us">United States</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div id="allclassediv">
+            <h3 id="allclasstitle">All Classes</h3>
+
+            <div id="allclassescard">
+                <!-- <div class="classcard">
+                    
+                    <div class="imgandins">
+                            <div class="imgclassdiv">
+                                <img src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="classimages">
+                                <a href="">Zumba with Karan</a>
+                                
+                            </div>
+                            <div class=insnameandmode>
+                                <p>Pips Bam</p>
+                                <p>Online-via Zoom</p>
+                            </div>
+                    </div>
+                    <div class="actandseat">
+                            <div>
+                                <p>31/3/2023</p>
+                                <p>11:00 Am - 11:45 AM</p>
+                            </div>
+                            <div>
+                                <p>5/10</p>
+                                <p>150₹</p>
+                            </div>
+                    </div>
+                    <div class="joinclassdiv">
+                        <button class="joinclassbutton">Join Class</button>
+                    </div>
+                </div> -->
+                <!-- <hr> -->
+               
+            </div>
+            
+        </div>
+        
+
+    </div>
+    
+</body>
+<script src="./scripts/userSearchClass.js"></script>
+</html>
