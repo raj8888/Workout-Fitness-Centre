@@ -1,0 +1,121 @@
+#container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+}
+#logo{
+    width: 100px;
+    border: 5px solid #b8d8d4;;
+   border-radius: 50%;
+}
+#logo_img{
+   width: 25%;
+    margin: auto;
+}
+#form{
+    padding: 20px;
+}
+#name{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+#country input{
+    width: 240%;
+    margin: auto;
+}
+#country{
+    width: 80%;
+    margin:auto;
+}
+#email input{
+   width: 240%;
+   margin: auto;
+}
+#email{
+    width: 80%;
+    margin: auto;
+}
+#select{
+    width: 80%;
+    margin: auto;
+}
+#gender{
+    width: 80%;
+}
+#pass{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+#pass{
+    width: 80%;
+    margin: auto;
+}
+#signup{
+    width: 50%;
+}
+#signup input{
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+select{
+    padding: 5px;
+    border-radius: 3px;
+}
+#button{
+    width: 80%;
+    margin: auto;
+}
+button{
+    width: 250%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #b8d8d4;
+    color: gray;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media screen and (max-width: 1080px) {
+ #signup_img{
+    display: none;
+ }
+ #form{
+    width: fit-content;
+    padding: 10px;
+ }
+ #name,#pass{
+    width: 100%;
+ }
+ #email input{
+    width:240%;
+    margin-left: -16px;
+ }
+ #country input{
+    width:240%;
+    margin-left: -15px;
+ }
+ button{
+    margin-left: -15px;
+    width: 245%;
+ }
+ select{
+    margin-left: -15px;
+ }
+#country label{
+    margin-left: -10px;
+}
+#select label{
+    margin-left: -10px;
+}
+#email label{
+    margin-left: -10px;
+}
+}
