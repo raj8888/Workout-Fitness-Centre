@@ -1,12 +1,15 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-.container1{
+
+.container1 {
     display: flex;
     justify-content: space-evenly;
-    background-color: teal;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    ;
 }
+
 .nav {
     display: flex;
     justify-content: space-evenly;
@@ -20,15 +23,47 @@ img {
 
 a {
     text-align: none;
-    color: white;
+    color: gray;
     text-decoration: none;
     padding-right: 15px;
 }
+
 button {
     border-radius: 10px;
     height: 25px;
     width: 30px;
 }
+
 #btn-1 {
     margin: 30px;
+}
+
+.container2 {
+    background-color: rgb(43, 114, 114);
+    color: white;
+    width: 95%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    padding-top: 5px;
+}
+
+@media only screen and (max-width: 520px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+
+@media only screen and (max-width: 699px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        background-color: lightblue;
+    }
 }
