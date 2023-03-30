@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Details</title>
+</head>
+<body>
+    <h1>Class Details</h1>
+</body>
+</html>
+<script>
+const urlParams = new URLSearchParams(window.location.search)
+const classId = urlParams.get("id")
+getAllClass(classId)
+async function getAllClass(classId){
+    try{
+     let dataFetch=await fetch(`http://localhost:4500/class/${classId}`,{
+        headers:{
+            authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI1OTdkZWIzN2ViMjkyMjcxYTg0NDciLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjgwMTg1MzE3LCJleHAiOjE2ODA3OTAxMTd9.TWO_WHEZ27A4Vpx0t9XJovW13yV_2xaimWfRtf6QxwM`
+        }
+    })
+    if(dataFetch.ok){
+        let temp=dataFetch.json()
+        .then(res=>{
+            console.log(res.classes)})
+       }else{
+        alert("Classes Not Fetched")
+       }
+       } catch (error) {
+        console.log(error)
+       }
+}
+</script>
