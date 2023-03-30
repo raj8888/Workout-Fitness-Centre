@@ -23,7 +23,7 @@
     width: 80%;
     margin: auto;
 }
-#country input, #email input{
+#country select, #email input{
     width: 240%;
     margin: auto;
 }
