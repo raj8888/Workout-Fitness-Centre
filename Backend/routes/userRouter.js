@@ -35,7 +35,7 @@ userRouter.get("/:id", async (req,res)=>{
 
 // User Registration
 userRouter.post("/register", async (req,res)=>{
-    let {name, email, password, phone, country, role} = req.body;
+    let {name, email, password, phone, sex, country, role} = req.body;
 
     try{
         let user = await UserModel.find({email});
@@ -49,7 +49,7 @@ userRouter.post("/register", async (req,res)=>{
                 }else{
                     let createdDate=get_date();
                     let createdTime=get_time();
-                    let user = new UserModel({name, email, password:hash, phone, country, role,createdDate,createdTime});
+                    let user = new UserModel({name, email, password:hash, phone, sex, country, role,createdDate,createdTime});
                     await user.save();
                     res.status(200).send({message:"User Registered",user})
                 }

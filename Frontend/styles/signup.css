@@ -6,7 +6,7 @@
     align-items: center;
     gap: 20px;
 }
-#   , #left_img_part{
+#left_img_part_signup   , #left_img_part{
     width: 70%;
     height: auto;
 }
@@ -42,11 +42,11 @@
 #createClass select{
     width:94% !important;
 }
-#country select, #email input{
+#country1 select, #email input{
     width: 240%;
     margin: auto;
 }
-#select, #select2, #pass, #button , #country, #email{
+#select, #select2, #pass, #button , #country1, #email{
     width: 80%;
     margin: auto;
 }
@@ -118,7 +118,7 @@ button:hover{
     width:240%;
     margin-left: -16px;
  }
- #country input{
+ #country1 input{
     width:240%;
     margin-left: -15px;
  }
@@ -129,7 +129,7 @@ button:hover{
  select{
     margin-left: -15px;
  }
-#select label, #email label, #country label{
+#select label, #email label, #country1 label{
     margin-left: -10px;
 }
 #form1{
