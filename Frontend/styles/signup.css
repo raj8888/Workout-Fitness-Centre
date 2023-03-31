@@ -65,16 +65,22 @@ select{
     padding: 5px;
     border-radius: 3px;
 }
-button{
+button, #submit_btn {
     width: 250%;
     padding: 10px;
     border-radius: 5px;
     background-color: #b8d8d4;
-    color: gray;
+    /* color: gray; */
+    color: black;
     border: none;
     cursor: pointer;
 }
-button:hover{
+#submit_btn{
+    padding: 10px !important;
+    width: 95% !important;
+}
+
+button:hover, #submit_btn:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #createClass input{
@@ -83,7 +89,7 @@ button:hover{
 #form1{
     width: 30%;
 }
-#create{
+#create, #submit_btn{
     width: 100%;
 }
 #form1 input{
