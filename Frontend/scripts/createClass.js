@@ -1,23 +1,51 @@
-const password = document.querySelector('#password1')
-const password2 = document.querySelector('#password2')
-let country = document.querySelector('#countryName')
+import baseURL from "./baseURL.js"
 
-const togglePassword = document.querySelector('#togglePassword1');
+let create = document.querySelector("#create")
+let form = document.querySelector("form");
 
-togglePassword.addEventListener('click', function (e) {
-  // toggle the type attribute
-  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-  password.setAttribute('type', type);
-  // toggle the eye slash icon
-  this.classList.toggle('fa-eye-slash');
-});
-const togglePassword2 = document.querySelector('#togglePassword2');
+create.addEventListener("click",(e)=>{
+    e.preventDefault();
 
-togglePassword2.addEventListener('click', function (e) {
-  // toggle the type attribute
-  const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
-  password2.setAttribute('type', type);
-  // toggle the eye slash icon
-  this.classList.toggle('fa-eye-slash');
-});
+    date_time=form.date_time.value
+    let obj = {
+        title: form.title.value,
+        price: form.price.value,
+        activity: form.activity.value,
+        seatTotal: form.seatTotal.value,
+        venue: form.venue.value,
+        locationOrLinkLocation: form.locationOrLinkLocation.value,
+        duration: form.duration.value,
+        role: form.role.value,
+    }
+    // userSaveInDB(obj);
+})
 
+
+async function userSaveInDB(obj){
+    console.log(obj)
+    try {
+        let url = baseURL+"/user/register"
+        let res = await fetch(url,{
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(obj)
+        });
+        let data = await res.json();
+        if(res.status==400){
+            alert(data.error)
+            window.location.assign("/frontend/pages/login.html");
+        }else if(res.status==401){
+            alert(data.message);
+            console.log(data.error);
+        }else{
+            alert(data.message);
+            console.log(data.user);
+            window.location.assign("/frontend/pages/login.html");
+        }
+    } catch (error) {
+        alert("Server not responding");
+        console.log(error.message)
+    }
+}
