@@ -1,11 +1,19 @@
+import baseURL from "./baseURL.js"
+
+let loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"))
+if(!loggedInUser){    
+    window.location.assign("/frontend/pages/login.html");
+}
+let loggedInUserEmail = loggedInUser.email;
+
 const urlParams = new URLSearchParams(window.location.search)
 const classId = urlParams.get("id")
 getAllClass(classId)
 async function getAllClass(classId){
     try{
-     let dataFetch=await fetch(`http://localhost:4500/class/${classId}`,{
+     let dataFetch=await fetch(`${baseURL}/class/${classId}`,{
         headers:{
-            authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI1OTdkZWIzN2ViMjkyMjcxYTg0NDciLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjgwMTg1MzE3LCJleHAiOjE2ODA3OTAxMTd9.TWO_WHEZ27A4Vpx0t9XJovW13yV_2xaimWfRtf6QxwM`
+            authorization:`Bearer ${loggedInUserEmail}`
         }
     })
     if(dataFetch.ok){
@@ -25,9 +33,9 @@ async function getAllClass(classId){
 
 async function getTrainer(trainerID){
     try{
-        let dataFetch=await fetch(`http://localhost:4500/user/${trainerID}`,{
+        let dataFetch=await fetch(`${baseURL}/user/${trainerID}`,{
            headers:{
-               authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI1OTdkZWIzN2ViMjkyMjcxYTg0NDciLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjgwMTg1MzE3LCJleHAiOjE2ODA3OTAxMTd9.TWO_WHEZ27A4Vpx0t9XJovW13yV_2xaimWfRtf6QxwM`
+               authorization:`Bearer ${loggedInUserEmail}`
            }
        })
             if(dataFetch.ok){
