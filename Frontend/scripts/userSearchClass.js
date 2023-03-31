@@ -1,11 +1,18 @@
+import baseURL from "./baseURL.js"
 
-getAllClass()
+let loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"))
+if(!loggedInUser){    
+    window.location.assign("/frontend/pages/login.html");
+}
+let loggedInUserEmail = loggedInUser.email;
+
+getAllClass();
 let newData;
 async function getAllClass(){
     try{
-     let dataFetch=await fetch("http://localhost:4500/class/all",{
-        headers:{
-            authorization:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDI1OTdkZWIzN2ViMjkyMjcxYTg0NDciLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjgwMTg1MzE3LCJleHAiOjE2ODA3OTAxMTd9.TWO_WHEZ27A4Vpx0t9XJovW13yV_2xaimWfRtf6QxwM`
+     let dataFetch=await fetch(baseURL+"/class/all",{
+        headers:{   
+            authorization:`Bearer ${loggedInUserEmail}`
         }
     })
     if(dataFetch.ok){
@@ -17,7 +24,8 @@ async function getAllClass(){
         alert("Classes Not Fetched")
        }
        } catch (error) {
-        console.log(error)
+        alert("Server not responding");
+        console.log(error.message)
        }
 }
 
