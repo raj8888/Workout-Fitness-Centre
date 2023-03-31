@@ -1,10 +1,14 @@
 import baseURL from "./baseURL.js"
 
-// let create = document.querySelector("#create")
+let loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"))
+if(!loggedInUser){    
+    window.location.assign("/frontend/pages/login.html");
+}
+let loggedInUserEmail = loggedInUser.email;
+
 let form = document.querySelector("form");
 
 form.addEventListener("submit",(e)=>{
-// create.addEventListener("click",(e)=>{
     e.preventDefault();
 
     let date_time= form.date_time.value.split("T");
@@ -15,7 +19,7 @@ form.addEventListener("submit",(e)=>{
         activity: form.activity.value,
         seatTotal: form.seatTotal.value,
         venue: form.venue.value,
-        locationOrLinkLocation: form.locationOrLink.value,
+        locationOrLink: form.locationOrLink.value,
         duration: form.duration.value,
         classDate: date_time[0],
         classTime: date_time[1]
@@ -31,21 +35,20 @@ async function classSaveInDB(obj){
         let res = await fetch(url,{
             method:"POST",
             headers: {
-                "Content-Type": "application/json"
+              authorization:`Bearer ${loggedInUserEmail}`,
+              "Content-Type": "application/json",
             },
             body:JSON.stringify(obj)
         });
         let data = await res.json();
         if(res.status==400){
-            alert(data.error)
-            window.location.assign("/frontend/pages/login.html");
-        }else if(res.status==401){
-            alert(data.message);
-            console.log(data.error);
+            alert(data.message)
+            console.log(data.error)
+            // window.location.assign("/frontend/pages/login.html");
         }else{
             alert(data.message);
-            console.log(data.user);
-            window.location.assign("/frontend/pages/login.html");
+            console.log(data.classes);
+            // window.location.assign("/frontend/pages/login.html");
         }
     } catch (error) {
         alert("Server not responding");
