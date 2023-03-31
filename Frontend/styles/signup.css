@@ -148,7 +148,7 @@ button:hover{
 
 @media screen and (max-width: 301px) {
     #form1{
-        width:fit-content
+        width:fit-content;
     }
     #form1 input{
         width:fit-content;
@@ -162,4 +162,5 @@ button:hover{
     #left_img_part, #left_img_part_signup{
         margin-right: 0px;
     }
+    
 }

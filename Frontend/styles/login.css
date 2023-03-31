@@ -59,5 +59,6 @@ button:hover{
  #form{
     width: fit-content;
     padding: 10px;
+    margin: auto;
  }
 }

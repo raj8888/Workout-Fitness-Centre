@@ -1,4 +1,5 @@
 const {UserModel} = require("../models/userModel");
+const {client} = require("../config/redisDB")
 const express = require("express");
 const bcrypt = require('bcrypt');
 require('dotenv').config()
@@ -74,7 +75,8 @@ userRouter.post("/login", async (req,res)=>{
                 if(result){
                     var token = jwt.sign({ userID: user._id, role:user.role, name:user.name }, process.env.secretKey, { expiresIn:"7d"});
                     var refresh_token = jwt.sign({ userID: user._id, role:user.role, name:user.name}, process.env.refreshSecretKey, { expiresIn:"30d" });
-                    res.status(200).send({message:"User Logged In",token,refresh_token})
+                    await client.HSET("token",email,token)
+                    res.status(200).send({message:"User Logged In",token,refresh_token,user})
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});
                     console.log(err)
