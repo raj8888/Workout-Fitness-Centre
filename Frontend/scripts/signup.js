@@ -82,6 +82,7 @@ async function userSaveInDB(obj){
             window.location.assign("/frontend/pages/login.html");
         }
     } catch (error) {
-        alert(error.message)
+        alert("Server not responding");
+        console.log(error.message)
     }
 }

@@ -76,6 +76,7 @@ userRouter.post("/login", async (req,res)=>{
                     var token = jwt.sign({ userID: user._id, role:user.role, name:user.name }, process.env.secretKey, { expiresIn:"7d"});
                     var refresh_token = jwt.sign({ userID: user._id, role:user.role, name:user.name}, process.env.refreshSecretKey, { expiresIn:"30d" });
                     await client.HSET("token",email,token)
+                    await client.HSET("refresh_token",email,refresh_token)
                     res.status(200).send({message:"User Logged In",token,refresh_token,user})
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});
