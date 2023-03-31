@@ -92,7 +92,7 @@ async function  renderAllData(classes,trainerInfo){
                    <h4>${classes.classTime}</h4>
                    <h4>${classes.venue}</h4>
                    <h4>${classes.locationOrLink}</h4>
-                   <h4>${classes.Duration}</h4>
+                   <h4>${classes.duration}</h4>
                    <h4>${classes.seatTotal}</h4>
                    <h4>${classes.seatOccupied}</h4>
                </div>
@@ -116,7 +116,7 @@ async function  renderAllData(classes,trainerInfo){
                    <div id="trainerheadinfo">
                        <h4>${trainerInfo.name}</h4>
                        <h4>${trainerInfo.country}</h4>
-                       <h4>${trainerInfo.phone}</h4>
+                       <h4>${trainerInfo.phone?trainerInfo.phone:"Not Provided"}</h4>
                        <h4>${trainerInfo.email}</h4>
                    </div>
                </div>

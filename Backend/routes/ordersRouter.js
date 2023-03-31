@@ -3,6 +3,7 @@ const express = require("express");
 require('dotenv').config()
 let {get_date,get_time}=require("../utils/utils")
 const {ClassesModel} = require("../models/ClassesModel");
+const {UserModel} = require("../models/userModel");
 
 
 const ordersRouter = express.Router();
@@ -61,7 +62,9 @@ ordersRouter.post("/create", async (req,res)=>{
             if(classes.seatOccupied < classes.seatTotal){
                 let order = new OrdersModel(payload);
                 await order.save();
+                
                 await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
+                await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
                 res.status(200).send({message:"Order created",order})
             }else{
                 res.status(401).send({message:"All seats are Booked"})
