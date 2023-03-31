@@ -25,7 +25,7 @@ async function getAllClass(){
 let allclassescard=document.getElementById("allclassescard")
 function renderAllData(data){
     let allData=data
-    console.log(allData)
+    // console.log(allData)
     allclassescard.innerHTML=""
     let map_allData=allData.map(elem=>{
         return` <div class="classcard">
@@ -75,10 +75,64 @@ searchbar.addEventListener('input',(event)=>{
 
 function searchalldata(event){
     let searchdata=event.target.value
-    console.log(newData)
+    // console.log(newData)
    let temp=newData.filter(function(elem){
     let ans=elem.locationOrLink.toLowerCase().includes(searchdata.toLowerCase())||elem.title.toLowerCase().includes(searchdata.toLowerCase())||elem.activity.toLowerCase().includes(searchdata.toLowerCase())||elem.venue.toLowerCase().includes(searchdata.toLowerCase())
     return ans;
   })
 return temp;
+}
+
+let activitiname=document.getElementById('acttype')
+activitiname.addEventListener("change",(event)=>{
+    let searchactivity=searchactivityfun(event.target.value)
+    if(searchactivity){
+       return renderAllData(searchactivity)
+    }else{
+        allclassescard.innerHTML=`<h2>Data Not Found</h3>`
+    }
+})
+
+function searchactivityfun(activity){
+   if(activity=="all"){
+    getAllClass()
+   }else{
+    let temp=newData.filter(function(elem){
+        let ans=elem.activity.toLowerCase().includes(activity.toLowerCase())||elem.venue.toLowerCase().includes(activity.toLowerCase())
+        return ans
+    })
+    return temp;
+   }
+}
+
+let attendacesearch=document.getElementById('atttype')
+attendacesearch.addEventListener("change",(event)=>{
+    let searchattendace=searchactivityfun(event.target.value)
+    if(searchattendace){
+     renderAllData(searchattendace) 
+    }else{
+        allclassescard.innerHTML=`<h2>Data Not Found</h3>`
+    }
+})
+
+let pricecomp=document.getElementById('location')
+pricecomp.addEventListener("change",(event)=>{
+    let searchlocation=event.target.value
+    if(searchlocation=="low"){
+        let lowtohigh=newData.sort(function(a,b){
+            return a.price - b.price
+        })
+     renderAllData(lowtohigh)
+    }else if(searchlocation=="high"){
+        let lowtohigh=newData.sort(function(a,b){
+            return b.price - a.price
+        })
+         renderAllData(lowtohigh)
+    }else{
+        getAllClass()
+    }
+})
+
+async function getTrainerInfo(){
+
 }
