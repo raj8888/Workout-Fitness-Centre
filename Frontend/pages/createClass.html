@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
+    <link rel="icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
+    <title>Create Fitness Class</title>
+</head>
+<body>
+    <div id="container" style="width:95%">
+        <div id="left_img_part">
+            <img src="../Images/Artboard-1.07f7761b.png" alt="" id="signup_img" >
+        </div>
+        <div id="form1">
+            <div id="logo_img">
+                <img src="../Images/logo/logo.png" alt="" id="logo">           
+            </div>
+            <p style="text-align: center;color: #5e8e92;font-size: large;">Create Fitness Class</p><br>
+
+            <div id="createClass">
+                <div id="top">
+                    <div>
+                        <label for="title">Class Title</label> <br> 
+                        <input type="text" placeholder="Enter class title" id="title" required  >
+                    </div>
+                    <div>
+                        <label for="price">Class Price</label> <br> 
+                        <input type="number" placeholder="Enter class Price" id="price" required>
+                    </div>
+                </div> <br>
+                
+                <div>
+                    <div id="selectCat">
+                        <label for="activity">Select Activity</label> <br> 
+                        <select id="activity" required>
+                            <option value="dance">Dance</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="zumba">Zumba</option>
+                            <option value="aerobics">Aerobics</option>
+                            <option value="swimming">Swimming</option>
+                            <option value="weightTraining">Weight Training</option>
+                            <option value="crossFit">Cross Fit</option>
+                            <option value="ballet">Ballet</option>
+                            <option value="boxing">Boxing</option>
+                            <option value="kickBoxing">Kick Boxing</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="football">Football</option>
+                            <option value="cycling">Cycling</option>
+                            <option value="singing">Singing</option>
+                        </select>
+                    </div> <br>
+                </div>  
+
+                <div id="mid">
+                    <div>
+                        <label for="seatTotal">Total Seats Available</label> <br> 
+                        <input type="number" placeholder="Enter seats available" id="seatTotal" required>
+                    </div>
+                    <div>
+                        <label for="venue">Select Venue</label> <br> 
+                        <select id="venue" style="width: 106% !important;" required>
+                            <option value="online">Online via zoom</option>
+                            <option value="offline">Offline</option>
+                        </select>
+                    </div>
+                </div> <br>
+
+                <div>
+                    <label for="locationOrLinkLocation/Link">Class Location/Link</label> <br> 
+                    <input type="text" placeholder="Enter Class Location/Link" id="locationOrLink" required>
+                </div> <br>
+
+                <div id="bottom">
+                    <div>
+                        <label for="duration">Class Duration</label> <br> 
+                        <input type="text" placeholder="Enter class duration" id="duration" required>
+                    </div>
+                    <div>
+                        <label for="date&time">Class Date & Time</label> <br> 
+                        <input type="datetime-local" placeholder="Enter class Date & Time" id="date&time" required>
+                    </div>
+                </div> <br>
+
+                <div id="button1">
+                    <button id="create">Create Class</button>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+</body>
+</html>
+<!-- <script type="module" src="./scripts/createClass.js"></script> -->

@@ -37,7 +37,8 @@ classesRouter.post("/create", async (req,res)=>{
     let payload = req.body;
     payload.createdDate=get_date();
     payload.createdTime=get_time();
-    payload.trainerID=payload.userID
+    payload.trainerID=payload.userID;
+    payload.trainerName=payload.username;
     payload.seatOccupied=0;
 
     try{

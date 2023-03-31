@@ -5,6 +5,7 @@ const ordersSchema = mongoose.Schema({
     classID:String,
     userID:String,
     status:Boolean,
+    selectedTime:String,
     createdDate:String,
     createdTime:String
 },{

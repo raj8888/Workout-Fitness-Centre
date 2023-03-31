@@ -1,9 +1,22 @@
 #container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 90%;
     align-items: center;
     gap: 20px;
+}
+#   , #left_img_part{
+    width: 70%;
+    height: auto;
+}
+#left_img_part{
+    margin-right: 50px;
+}
+#left_img_part  img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
 }
 #logo{
     width: 100px;
@@ -17,11 +30,17 @@
 #form{
     padding: 20px;
 }
-#name, #pass{
+#name, #pass, #top, #top2, #mid, #bottom{
     display: flex;
     gap: 20px;
     width: 80%;
     margin: auto;
+}
+#top, #top2, #mid, #bottom{
+    width:95% !important; 
+}
+#createClass select{
+    width:94% !important;
 }
 #country select, #email input{
     width: 240%;
@@ -89,7 +108,10 @@ button:hover{
     padding: 10px;
     margin: auto;
  }
- #name,#pass{
+ #name,#pass, #top  {
+    width: 100%;
+ }
+#top input {
     width: 100%;
  }
  #email input{
@@ -118,6 +140,9 @@ button:hover{
 #form1 button{
     margin-left: 0%;
 }
+#left_img_part, #left_img_part_signup{
+    margin-right: 0px;
+}
 
 }
 
@@ -133,5 +158,8 @@ button:hover{
     }
     #form1 img{
         margin-left: -10px;
+    }
+    #left_img_part, #left_img_part_signup{
+        margin-right: 0px;
     }
 }
