@@ -1,4 +1,5 @@
 const {UserModel} = require("../models/userModel");
+const {client} = require("../config/redisDB")
 const express = require("express");
 const bcrypt = require('bcrypt');
 require('dotenv').config()
@@ -35,7 +36,7 @@ userRouter.get("/:id", async (req,res)=>{
 
 // User Registration
 userRouter.post("/register", async (req,res)=>{
-    let {name, email, password, phone, country, role} = req.body;
+    let {name, email, password, phone, sex, country, role} = req.body;
 
     try{
         let user = await UserModel.find({email});
@@ -49,7 +50,7 @@ userRouter.post("/register", async (req,res)=>{
                 }else{
                     let createdDate=get_date();
                     let createdTime=get_time();
-                    let user = new UserModel({name, email, password:hash, phone, country, role,createdDate,createdTime});
+                    let user = new UserModel({name, email, password:hash, phone, sex, country, role,createdDate,createdTime});
                     await user.save();
                     res.status(200).send({message:"User Registered",user})
                 }
@@ -74,7 +75,13 @@ userRouter.post("/login", async (req,res)=>{
                 if(result){
                     var token = jwt.sign({ userID: user._id, role:user.role, name:user.name }, process.env.secretKey, { expiresIn:"7d"});
                     var refresh_token = jwt.sign({ userID: user._id, role:user.role, name:user.name}, process.env.refreshSecretKey, { expiresIn:"30d" });
-                    res.status(200).send({message:"User Logged In",token,refresh_token})
+                    await client.HSET("token",email,token)
+                    await client.HSET("refresh_token",email,refresh_token)
+                    if(user.role=="trainer"){
+                        res.status(200).send({message:"Trainer Logged In",token,refresh_token,user})
+                    }else{
+                        res.status(200).send({message:"User Logged In",token,refresh_token,user})
+                    }
                 }else{
                     res.status(401).send({error:"Incorrect Password, Kindly Login Again"});
                     console.log(err)

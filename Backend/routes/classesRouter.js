@@ -1,4 +1,5 @@
 const {ClassesModel} = require("../models/ClassesModel");
+const {UserModel} = require("../models/userModel");
 const express = require("express");
 require('dotenv').config()
 let {get_date,get_time}=require("../utils/utils")
@@ -41,10 +42,13 @@ classesRouter.post("/create", async (req,res)=>{
     payload.trainerName=payload.username;
     payload.seatOccupied=0;
 
+    // res.send({message:"Class created",classes:payload})
+
     try{
         let classes = new ClassesModel(payload);
         await classes.save();
-        res.status(200).send({message:"class created",classes})
+        await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
+        res.status(200).send({message:"Class created",classes})
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
     }

@@ -6,7 +6,7 @@
     align-items: center;
     gap: 20px;
 }
-#   , #left_img_part{
+#left_img_part_signup   , #left_img_part{
     width: 70%;
     height: auto;
 }
@@ -42,11 +42,11 @@
 #createClass select{
     width:94% !important;
 }
-#country select, #email input{
+#country1 select, #email input{
     width: 240%;
     margin: auto;
 }
-#select, #select2, #pass, #button , #country, #email{
+#select, #select2, #pass, #button , #country1, #email{
     width: 80%;
     margin: auto;
 }
@@ -65,16 +65,22 @@ select{
     padding: 5px;
     border-radius: 3px;
 }
-button{
+button, #submit_btn {
     width: 250%;
     padding: 10px;
     border-radius: 5px;
     background-color: #b8d8d4;
-    color: gray;
+    /* color: gray; */
+    color: black;
     border: none;
     cursor: pointer;
 }
-button:hover{
+#submit_btn{
+    padding: 10px !important;
+    width: 95% !important;
+}
+
+button:hover, #submit_btn:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #createClass input{
@@ -83,7 +89,7 @@ button:hover{
 #form1{
     width: 30%;
 }
-#create{
+#create, #submit_btn{
     width: 100%;
 }
 #form1 input{
@@ -118,7 +124,7 @@ button:hover{
     width:240%;
     margin-left: -16px;
  }
- #country input{
+ #country1 input{
     width:240%;
     margin-left: -15px;
  }
@@ -129,7 +135,7 @@ button:hover{
  select{
     margin-left: -15px;
  }
-#select label, #email label, #country label{
+#select label, #email label, #country1 label{
     margin-left: -10px;
 }
 #form1{
@@ -148,7 +154,7 @@ button:hover{
 
 @media screen and (max-width: 301px) {
     #form1{
-        width:fit-content
+        width:fit-content;
     }
     #form1 input{
         width:fit-content;
@@ -162,4 +168,5 @@ button:hover{
     #left_img_part, #left_img_part_signup{
         margin-right: 0px;
     }
+    
 }

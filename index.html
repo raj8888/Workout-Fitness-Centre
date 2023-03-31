@@ -4,29 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Workout</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="./Frontend/styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="container">
-        <div id="img1">
-            <img src="./Images/logo.png" alt="">
-        </div>
-        <div id="mymain" class="main">
-            <a href="#Home"><p>Home</p></a>
-            <a href="#Home"><p>Scheduling Software</p></a>
-            <a href="#Features"><p>Features</p></a>
-            <a href="#Pricing"><p>Pricing</p></a>
-            <a href="#Help"><p>Help & Contact</p></a>
-            <a href="#Blog"><p>Blog</p></a>
-            <a href="#Login"><p>Login</p></a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-              </a>
-        </div>
-    </div>
+    <nav class="navbar">
+
+     
+        
+        <div class="logo"><img src="./Images/logo.png" alt=""></div>
+        
+    
+        
+            <ul class="nav-links">
+        
+    
+        
+                <input type="checkbox" id="checkbox_toggle" />
+        
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        
+        
+                <div class="menu">
+            
+                    <li><a href="/">Home</a></li>
+            
+                    <li><a href="/">About</a></li>
+            
+                    <li class="services">
+            
+                        <a href="/">Services</a>
+            
+        
+            
+                        <ul class="dropdown">
+            
+                            <li><a href="/">Website Calendar Integration</a></li>
+                
+                            <li><a href="/">Custom Branded Emails</a></li>
+                
+                            <li><a href="/">Business Profile Page</a></li>
+                
+                            <li><a href="/">Set-Up And Installation Services</a></li>
+                
+                            <li><a href="/">Zoom Online Streaming</a></li>
+            
+                        </ul>
+            
+                    </li>
+            
+                    <li><a href="/">Pricing</a></li>
+            
+                    <li><a href="/">Contact</a></li>
+
+                    <li><a href="./Frontend/pages/">Login</a></li>
+            
+                </div>
+        
+            </ul>
+        
+    </nav>
+        
 
 
 
@@ -75,7 +114,6 @@
             <h4>United Kingdom</h4>
         </div>
     </div>
-
     <div id='mid4'>
         <h1>Workout Features</h1>
         <p>Workout has been specifically designed with class instructors in mind – whether you teach yoga, Pilates, Zumba
@@ -287,7 +325,6 @@
                     <p>All Registered Trade Marks, company names, brand names and logos used on this Website are the property of their respective owners.</p>
                   </div> -->
        </div>
-
 </body>
 </html>
 <script>
