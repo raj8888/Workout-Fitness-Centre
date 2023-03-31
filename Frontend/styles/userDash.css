@@ -1,12 +1,14 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-.container1{
+
+.container1 {
     display: flex;
     justify-content: space-evenly;
-    background-color: teal;
+    background-color: white;
 }
+
 .nav {
     display: flex;
     justify-content: space-evenly;
@@ -20,15 +22,81 @@ img {
 
 a {
     text-align: none;
-    color: white;
+    color: gray;
     text-decoration: none;
     padding-right: 15px;
 }
+
 button {
     border-radius: 10px;
     height: 25px;
     width: 30px;
 }
+
 #btn-1 {
     margin: 30px;
+}
+
+.home h1 {
+    text-align: center;
+    background-color: #b8d8d4;
+    margin: auto;
+}
+.container2{
+    display: flex;
+}
+.container2a{
+    display: flex;
+    border: 1px solid red;
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+}
+.container2b{
+    display: flex;
+    border: 1px solid brown;
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+}
+.container2b h1{
+    padding: 00px 420px 0px 0px;
+}
+.container3{
+    display: flex;
+    border: 1px solid blue;
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+}
+.div3a{
+    padding: 00px 275px 0px 0px;
+}
+
+.div3a div{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 40px;
+    text-align: center;
+}
+
+.div3b{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-align: center;
+}
+/* Medium Screen */
+@media all and (min-width: 499px) and (max-width: 768px) {
+    .container1{
+        grid-template-columns: repeat(1,50%);
+        grid-template-rows: 100px;
+        margin-bottom: 15px;
+    }
+    .container2{
+        grid-template-columns: repeat(1,50%);
+        grid-auto-rows: 400px;
+        gap: 10px 10px;
+    }
+}
+
+/* Small Screen */
+@media all and (min-width: 320px) and (max-width: 499px) {
+    .container1{
+        grid-template-columns: repeat(1,1fr);
+    }
 }
