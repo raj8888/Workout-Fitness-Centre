@@ -27,7 +27,11 @@ async function loginUser(obj){
         }else{
             alert(data.message);
             sessionStorage.setItem("loggedInUser",JSON.stringify(data.user))
-            window.location.assign("/frontend/pages/userDashboard.html");
+            if(data.user.role=="client"){
+              window.location.assign("/frontend/pages/userDashboard.html");
+            }else{
+              window.location.assign("/frontend/pages/trainerDashboard.html");              
+            }
         }
     } catch (error) {
         alert("Server not responding");

@@ -1,30 +1,33 @@
 import baseURL from "./baseURL.js"
 
-let create = document.querySelector("#create")
+// let create = document.querySelector("#create")
 let form = document.querySelector("form");
 
-create.addEventListener("click",(e)=>{
+form.addEventListener("submit",(e)=>{
+// create.addEventListener("click",(e)=>{
     e.preventDefault();
 
-    date_time=form.date_time.value
+    let date_time= form.date_time.value.split("T");
+    
     let obj = {
         title: form.title.value,
-        price: form.price.value,
+        price: form.price.value,  
         activity: form.activity.value,
         seatTotal: form.seatTotal.value,
         venue: form.venue.value,
-        locationOrLinkLocation: form.locationOrLinkLocation.value,
+        locationOrLinkLocation: form.locationOrLink.value,
         duration: form.duration.value,
-        role: form.role.value,
+        classDate: date_time[0],
+        classTime: date_time[1]
     }
-    // userSaveInDB(obj);
+    classSaveInDB(obj);
 })
 
 
-async function userSaveInDB(obj){
-    console.log(obj)
+async function classSaveInDB(obj){
+    // console.log(obj)
     try {
-        let url = baseURL+"/user/register"
+        let url = baseURL+"/class/create"
         let res = await fetch(url,{
             method:"POST",
             headers: {
