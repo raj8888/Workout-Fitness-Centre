@@ -13,7 +13,7 @@
 
      
         
-        <div class="logo"><img src="./Images/logo.png" alt=""></div>
+        <div class="logo"><img src="./Frontend/Images/logo/logo.png" alt=""></div>
         
     
         
@@ -58,7 +58,7 @@
             
                     <li><a href="/">Contact</a></li>
 
-                    <li><a href="./Frontend/pages/">Login</a></li>
+                    <li><a href="./Frontend/pages/login.html">Login</a></li>
             
                 </div>
         
@@ -73,16 +73,16 @@
         <div class="top">
             <h1>Scheduling Software as Flexible as You Are</h1>
             <p>ClassFit is scheduling software with a difference. Easily manage your classes, take payments and reduce drop-outs with our powerful booking software.</p>
-            <div>
-                <button class="but1">Create an account</button>
-                <button class="but2">Login</button>
+            <div class="have">
+                <button  class="but1">Create an account</button>
+                <button  class="but2">Login</button>
             </div>
         </div>
         <div class="img2">
-            <img  src="./Images/men-and-women-working-out-1616x674.jpg" alt="">
-            <img  src="./Images/couple-training-together-gym_651396-1076.avif" alt="">
-            <img  src="./Images/kettlebell-3293481_960_720.jpg" alt="">
-            <img  src="./Images/fitness-club-interior-gym-nobody_266732-12682.avif" alt="">
+            <img  src="./Frontend/Images/men-and-women-working-out-1616x674.jpg" alt="">
+            <img  src="./Frontend/Images/couple-training-together-gym_651396-1076.avif" alt="">
+            <img  src="./Frontend/Images/kettlebell-3293481_960_720.jpg" alt="">
+            <img  src="./Frontend/Images/fitness-club-interior-gym-nobody_266732-12682.avif" alt="">
         </div>
             
     </div>
@@ -328,13 +328,14 @@
 </body>
 </html>
 <script>
-    function myFunction() {
-  var x = document.getElementById("mymain");
-  if (x.className === "main") {
-    x.className += " responsive";
-  } else {
-    x.className = "main";
-  }
+
+document.querySelector(".but1").addEventListener("click",myfunc)
+function myfunc(){
+    window.location.href="./Frontend/pages/signup.html"
+}
+document.querySelector(".but2").addEventListener("click",myfunc1)
+function myfunc1(){
+    window.location.href="./Frontend/pages/login.html"
 }
 
 </script>
