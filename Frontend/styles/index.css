@@ -195,6 +195,9 @@
     border-radius: 2px;
     border:0px
 }
+.have>button:hover{
+   cursor: pointer;
+}
 .img2{
     width:60%;
     display: grid;
