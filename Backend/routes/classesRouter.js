@@ -1,4 +1,4 @@
-const {ClassesModel} = require("../models/ClassesModel");
+const {ClassesModel} = require("../models/classesModel");
 const {UserModel} = require("../models/userModel");
 const express = require("express");
 require('dotenv').config()
