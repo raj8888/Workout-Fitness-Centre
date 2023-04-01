@@ -8,10 +8,34 @@ let loggedInUserEmail = loggedInUser.email;
 console.log(loggedInUser)
 
 
+let totallength;
+getClasslength(loggedInUser._id)
+async function getClasslength(id){
+    try {
+        let fetchingData=await fetch(baseURL+`/class/searchByUserID/${id}`,{
+            method:"GET",
+            headers:{   
+                authorization:`Bearer ${loggedInUserEmail}`
+            }
+        })
+        let temp= await fetchingData.json()
+        if(fetchingData.ok){
+           totallength=temp.classes.length
+           renderUserInfo(totallength)
+        }else{
+            console.log(temp)
+            alert(fetchingData.message)
+        }
+    } catch (error) {
+        alert('Server Error')
+        console.log(error.message)
+    }
+
+}
 
 let allclientinfo=document.getElementById("clientinfo")
-renderUserInfo()
-function renderUserInfo(){
+
+function renderUserInfo(totallength){
 allclientinfo.innerHTML=''
 allclientinfo.innerHTML=`<div id="clientname">
 <div id="profimgdiv">
@@ -24,7 +48,7 @@ allclientinfo.innerHTML=`<div id="clientname">
 </div>
 <div id="clineclass">
  <div id="notclassdiv">
-   ${renderTotalClass(loggedInUser.classes.length)}
+   ${renderTotalClass(totallength)}
 </div> 
 </div>`
 }
@@ -155,3 +179,4 @@ function getRandomItem(arr) {
    let item = arr[randomIndex];
   return item;
 }
+
