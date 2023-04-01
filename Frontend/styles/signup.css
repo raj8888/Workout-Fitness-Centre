@@ -1,4 +1,4 @@
-#container{
+#container,#container1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,10 +92,16 @@ select{
 #create, #submit_btn{
     width: 100%;
 }
-#form1 input{
+#form1 input,#container1 #form input{
     padding: 5px;
     border:1px solid gray;
     border-radius: 3px;
+    width: 90%;
+    margin: auto;
+    margin-left: 3%;
+}
+#container1 label{
+    padding: 5px;
     width: 90%;
     margin: auto;
     margin-left: 3%;
@@ -113,6 +119,9 @@ select{
    width: max-content;
    margin-right: 20%;
  }
+ #container1 #form{
+    margin: auto;
+ }
 
 }
 
@@ -121,6 +130,9 @@ select{
     width: max-content;
     display: flex;
     justify-content: center;
+ }
+ #container1 {
+    display: block;
  }
 }
 

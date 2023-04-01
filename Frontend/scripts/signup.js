@@ -34,7 +34,7 @@ submit.addEventListener("click",(e)=>{
 })
 
 document.querySelector("#login").addEventListener("click",()=>{
-    window.location="login.html"
+    window.location.assign("/frontend/pages/login.html");
 })
 
 
