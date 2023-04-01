@@ -1,0 +1,35 @@
+#clientname{
+    background-image: url("https://images.pexels.com/photos/3756042/pexels-photo-3756042.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   height: 150px;
+}
+
+#classnotcreated{
+    margin-left: 5px;
+}
+
+
+@media(min-width: 20px) and (max-width: 700px){
+    #clientinfo{
+        flex-direction: column;
+    }
+    #clientname{
+        width: 95%;
+        margin: auto;
+    }
+    #clineclass{
+        width: 92%;
+        margin: auto;
+        margin-top: 1%;
+    }
+    #profileimg{
+        width: 70px;
+    }
+    #clientnamediv p{
+        font-size: 15px;
+    }
+}

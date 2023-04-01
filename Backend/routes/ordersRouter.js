@@ -2,7 +2,7 @@ const {OrdersModel} = require("../models/ordersModel");
 const express = require("express");
 require('dotenv').config()
 let {get_date,get_time}=require("../utils/utils")
-const {ClassesModel} = require("../models/ClassesModel");
+const {ClassesModel} = require("../models/classesModel");
 const {UserModel} = require("../models/userModel");
 const {mailOrderDetail} = require("../config/mailer");
 
