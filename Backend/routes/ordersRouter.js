@@ -46,6 +46,29 @@ ordersRouter.get("/user/:id", async (req,res)=>{
     }
 })
 
+// Order Check Availablity
+ordersRouter.post("/checkAvailablity", async (req,res)=>{
+    console.log("hi")
+    res.send({message:"Slot Available, Click on next for payment"})
+    // let payload = req.body;
+    // let classID = payload.classID;
+    // try{
+    //     let classes = await ClassesModel.findOne({_id:classID});
+    //     // console.log(classes,classID)
+    //     if(classes.clients.includes(payload.userID)){            
+    //         res.status(401).send({message:"You have already registered for this class"})
+    //     }else{
+    //         if(classes.seatOccupied < classes.seatTotal){
+    //             res.status(200).send({message:"Slot Available, Click on next for payment"})     
+    //         }else{
+    //             res.status(401).send({message:"All seats are Booked"})
+    //         }
+    //     }
+    // }catch(error){
+    //     res.status(400).send({message:"Something went wrong",error:error.message})
+    // }
+})
+
 // Order creation
 ordersRouter.post("/create", async (req,res)=>{
     let payload = req.body;
@@ -53,27 +76,43 @@ ordersRouter.post("/create", async (req,res)=>{
     payload.createdDate=get_date();
     payload.createdTime=get_time();
     let classID = payload.classID;
-    try{
-        let classes = await ClassesModel.findOne({_id:classID});
-        console.log(classes,classID)
-        if(classes.clients.includes(payload.userID)){            
-            res.status(401).send({message:"You have already registered for this class"})
-        }else{
-            if(classes.seatOccupied < classes.seatTotal){
-                let order = new OrdersModel(payload);
-                await order.save();
-                
-                await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
-                await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
-                res.status(200).send({message:"Order created",order})
-            }else{
-                res.status(401).send({message:"All seats are Booked"})
-            }
-        }
+    try{        
+        let order = new OrdersModel(payload);
+        await order.save();                
+        await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
+        await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
+        res.status(200).send({message:"Order created",order})           
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
     }
 })
+
+// ordersRouter.post("/create", async (req,res)=>{
+//     let payload = req.body;
+//     payload.status=true;
+//     payload.createdDate=get_date();
+//     payload.createdTime=get_time();
+//     let classID = payload.classID;
+//     try{
+//         let classes = await ClassesModel.findOne({_id:classID});
+//         console.log(classes,classID)
+//         if(classes.clients.includes(payload.userID)){            
+//             res.status(401).send({message:"You have already registered for this class"})
+//         }else{
+//             if(classes.seatOccupied < classes.seatTotal){
+//                 let order = new OrdersModel(payload);
+//                 await order.save();                
+//                 await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
+//                 await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
+//                 res.status(200).send({message:"Order created",order})
+//             }else{
+//                 res.status(401).send({message:"All seats are Booked"})
+//             }
+//         }
+//     }catch(error){
+//         res.status(400).send({message:"Something went wrong",error:error.message})
+//     }
+// })
 
 
 // Order status Update (true or false)
