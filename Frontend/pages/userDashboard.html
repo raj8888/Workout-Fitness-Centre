@@ -37,11 +37,11 @@
                 
                         <li><a href="./userSearchClass.html">Class Search</a></li>
                 
-                        <li><a href="/">My Classses</a></li>
+                        <li><a href="./userSearchClass.html">My Classses</a></li>
                 
-                        <li><a href="/">Favorites</a></li>
+                        <li><a href="./userSearchClass.html">Favorites</a></li>
     
-                        <li><a href="../pages/login.html">Logout</a></li>
+                        <li><a href="../pages/login.html" onclick="logoutFun()">Logout</a></li>
                 
                     </div>
             
@@ -59,4 +59,9 @@
 </body>
 
 </html>
+<script>
+    function logoutFun(){
+    sessionStorage.clear();
+}
+</script>
 <script type="module" src="../scripts/userDashboard.js"></script>
