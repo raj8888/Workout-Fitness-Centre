@@ -74,7 +74,7 @@ form.addEventListener("submit",(e)=>{
 async function checkAvailablity(obj){
     console.log(obj)
     try {
-        let url = baseURL+"/class/checkAvailablity"
+        let url = baseURL+"/order/checkAvailablity"
         let res = await fetch(url,{ 
             method:"POST",
             headers: {
