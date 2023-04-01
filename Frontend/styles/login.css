@@ -1,6 +1,7 @@
 #container{
     display: flex;
     justify-content: space-between;
+    gap:100px;
     width: 90%;
     align-items: center;
 }
@@ -15,9 +16,11 @@
     flex-direction: column;
     justify-content: center;
 }
-#logo_img{
-   width: 25%;
-    margin: auto;
+#logo_img img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%; 
 }
 #signin{
     width: 95%;
@@ -33,13 +36,15 @@ input{
     border-radius: 5px;
 }
 button{
-    width: 100%;
+    width: 93%;
     padding: 10px;
     border-radius: 5px;
     background-color: #b8d8d4;
     color: gray;
     border: none;
     cursor: pointer;
+    display: inline-block;
+    margin: auto;
 }
 button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -52,13 +57,21 @@ button:hover{
   .icons img {
     width: 50px;
   }
-@media screen and (max-width: 1080px) {
- #signup_img{
-    display: none;
- }
- #form{
-    width: fit-content;
-    padding: 10px;
-    margin: auto;
- }
-}
+  @media screen and (max-width: 1080px) {
+    #signup_img{
+       display: none;
+    }
+    #container{
+        display: flex;
+        justify-content:center
+     }
+   
+   }
+   
+   @media screen and (max-width: 450px) {
+    #container{
+       width: max-content;
+       display: flex;
+       justify-content: center;
+    }
+   }
