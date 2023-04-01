@@ -98,7 +98,7 @@ async function checkAvailablity(obj){
             // }
     } catch (error) {
         alert("Server not responding");
-        console.log(error)
+        console.log(error.message)
     }
 }
 
