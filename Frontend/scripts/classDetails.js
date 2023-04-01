@@ -25,6 +25,7 @@ async function getAllClass(classId){
         })
        }else{
         alert("Classes Not Fetched")
+        swal({text: "Classes Not Fetched", icon: "error", button: "ok", timer:1000})        
        }
        } catch (error) {
         console.log(error)
@@ -42,7 +43,8 @@ async function getTrainer(trainerID){
                 let temp= await dataFetch.json()
                return (temp.user)
             }else{
-                alert("Trainer Not Fetched")
+                // alert("Trainer Not Fetched")       
+                swal({text: "Trainer Not Fetched", icon: "error", button: "ok", timer:1000})
             }
     } catch (error) {
            console.log(error)

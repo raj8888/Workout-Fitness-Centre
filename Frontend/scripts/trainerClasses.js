@@ -91,13 +91,16 @@ async function deleteClass(classid){
             }
         })
         if(data.ok){
-            alert("Class Deleted Successfully")
+            // alert("Class Deleted Successfully")
+            swal({text: "Class Deleted Successfully", icon: "success", button: "ok", timer:1000})
             getAllClass()
         }else{
-            alert("Class not deleted")
+            // alert("Class not deleted")
+            swal({text: "Class not deleted", icon: "error", button: "ok", timer:1000})
         }
     } catch (error) {
-        alert("Server not responding");
+        // alert("Server not responding");
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
         console.log(error.message)
     }
 }

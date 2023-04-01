@@ -26,7 +26,8 @@ async function getClass(classId){
         });
         let data = await res.json();
         if(res.status==400){
-            alert(data.message)
+            // alert(data.message)
+            swal({text: data.message, icon: "success", button: "ok", timer:1000})
             console.log(data.error);
         }else{    
             displayDataInForm(data.classes);        
@@ -34,7 +35,8 @@ async function getClass(classId){
             // window.location.assign("/frontend/pages/login.html");
         }
     } catch (error) {
-        alert("Server not responding");
+        // alert("Server not responding");        
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
         console.log(error.message)
     }
 }
@@ -65,14 +67,14 @@ form.addEventListener("submit",(e)=>{
     let obj = {
         price: form.price.value,  
         selectedDate_Time:form.date_time.value,
-        classId
+        classID:classId
     }
     checkAvailablity(obj);
 })
 
 
 async function checkAvailablity(obj){
-    console.log(obj)
+    // console.log(obj)
     try {
         let url = baseURL+"/order/checkAvailablity"
         let res = await fetch(url,{ 
@@ -83,25 +85,32 @@ async function checkAvailablity(obj){
             },
             body:JSON.stringify(obj)
         });
-            // let data = await res.json();
-            // alert(data.message)
-            // if(res.status==400){
-            //     alert(data.message)
-            //     // console.log(data.error)
-            // }else if(res.status==401){
-            //     alert(data.message)
-            // }else{
-            //     alert(data.message);
-            //     orderDetailObj=obj;
-            //     checkAvailablity_btn.style.display="none";
-            //     next_btn.style.display="block";
-            // }
+            let data = await res.json();
+            if(res.status==400){
+                // alert(data.message)
+                swal({text: data.message, icon: "error", button: "ok", timer:1000})
+                // console.log(data.error)
+            }else if(res.status==401){
+                // alert(data.message)
+                swal({text: data.message, icon: "error", button: "ok", timer:1000})
+            }else{
+                // alert(data.message);
+                swal({text: data.message+"\n", icon: "success", button: "ok", timer:1000})
+                .then(()=>{                    
+                    orderDetailObj=obj;
+                    checkAvailablity_btn.style.display="none";
+                    next_btn.style.display="block";
+                })
+            }
     } catch (error) {
-        alert("Server not responding");
-        console.log(error.message)
+        // alert("Server not responding");        
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
+        console.log(error.message);
     }
 }
 
 next_btn.addEventListener("click",(e)=>{
-    alert("next button clicked")
+    // console.log(orderDetailObj)
+    sessionStorage.setItem("classDetailsForOrder",JSON.stringify(orderDetailObj));    
+    window.location.assign("/frontend/pages/payment.html");
 })
