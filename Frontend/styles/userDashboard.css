@@ -388,7 +388,9 @@ a {
 
 #allclassescard{
     margin-top: 10px;
-    }
+    width: 95%;
+    margin: auto;
+}
     
     .imgclassdiv{
         display: flex;

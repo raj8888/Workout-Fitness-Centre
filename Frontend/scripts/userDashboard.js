@@ -57,7 +57,7 @@ async function getClass(id){
         let temp= await fetchingData.json()
         if(fetchingData.ok){
             console.log(temp)
-            renderderAllData(temp)
+            renderderAllData(temp.classes)
         }else{
             console.log(temp)
             alert(fetchingData.message)
@@ -74,8 +74,6 @@ async function getClass(id){
 let divForRender=document.getElementById("allclassescard")
 
 async function renderderAllData(allData){
-    
-   await allData
     console.log(allData)
     divForRender.innerHTML=""
     let map_allData=allData.map(elem=>{
@@ -102,11 +100,19 @@ async function renderderAllData(allData){
                 </div>
         </div>
         <div class="joinclassdiv">
-            <button class="joinclassbutton" data-id=${elem._id}>Join Class</button>
+            <button class="joinclassbutton" data-id=${elem._id}>Class Details</button>
         </div>
     </div><hr>`
     })
     divForRender.innerHTML=map_allData.join("")
+
+    let joicClassbtn=document.querySelectorAll('.joinclassbutton')
+    joicClassbtn.forEach(elem=>{
+     elem.addEventListener('click',(event)=>{
+         let id = event.target.dataset.id;
+         window.location.assign(`./classDetails.html?id=${id}`)
+     })
+    })
 }
 
 function checkvenue(venue,locationOrLink){
