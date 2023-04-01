@@ -25,6 +25,7 @@ async function getAllClass(classId){
         })
        }else{
         alert("Classes Not Fetched")
+        swal({text: "Classes Not Fetched", icon: "error", button: "ok", timer:1000})        
        }
        } catch (error) {
         console.log(error)
@@ -42,7 +43,8 @@ async function getTrainer(trainerID){
                 let temp= await dataFetch.json()
                return (temp.user)
             }else{
-                alert("Trainer Not Fetched")
+                // alert("Trainer Not Fetched")       
+                swal({text: "Trainer Not Fetched", icon: "error", button: "ok", timer:1000})
             }
     } catch (error) {
            console.log(error)
@@ -167,7 +169,8 @@ function renderImages(actname){
         football:["https://images.pexels.com/photos/918798/pexels-photo-918798.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/3148452/pexels-photo-3148452.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/3041176/pexels-photo-3041176.jpeg?auto=compress&cs=tinysrgb&w=600"],
         kickboxing:["https://images.pexels.com/photos/598686/pexels-photo-598686.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/9302141/pexels-photo-9302141.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/4804077/pexels-photo-4804077.jpeg?auto=compress&cs=tinysrgb&w=600"],
         singing:["https://images.pexels.com/photos/236149/pexels-photo-236149.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/3388899/pexels-photo-3388899.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1456642/pexels-photo-1456642.jpeg?auto=compress&cs=tinysrgb&w=600"],
-        weighttraining:["https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1886487/pexels-photo-1886487.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=600"]
+        weighttraining:["https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1886487/pexels-photo-1886487.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        dance:["https://images.pexels.com/photos/358010/pexels-photo-358010.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/46158/ballet-ballerina-performance-don-quixote-46158.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/209948/pexels-photo-209948.jpeg?auto=compress&cs=tinysrgb&w=600"]
     }
     let newactname=actname.toLowerCase()
     let name=allImagesData[`${newactname}`]
@@ -197,7 +200,9 @@ function rederActDesc(activity){
         football:"Playing football is equivalent to muscular strength exercises (anaerobic) such as running at high speed and lifting weights. As these types of exercises help to burn body fat as much as possible, the risk of heart disease and the accumulation of fat in the blood vessels are eliminated.",
         kickboxing:"Just like other cardio workouts, kickboxing offers all the benefits of a high-intensity routine, including better coordination, mobility and strength. You'll not only knock your muscles into high gear, but you'll squash the stress of the day.",
         singing:"By exercising your voice beforehand, you may be able to strengthen your speaking or singing voice. Warm up your voice by breathing deeply, moving your tongue around and pretending to chew. To strengthen your speaking or singing voice, trill your lips and practice saying tongue twisters.",
-        weighttraining:"Weight training is an important part of any fitness program. Combined with aerobic exercise, weight training can increase your strength and muscle tone, increase muscle mass, improve your bone density, help maintain weight, and help you lose fat."
+        weighttraining:"Weight training is an important part of any fitness program. Combined with aerobic exercise, weight training can increase your strength and muscle tone, increase muscle mass, improve your bone density, help maintain weight, and help you lose fat.",
+        dance:"Zumba is a powerful exercise with a 600 to 1,000-calorie burn in just an hour. Tones your entire body. You may feel sore in places you never knew existed, but it gets results. Zumba targets lots of different muscle groups at once for total body toning."
+        
     }
     activity=activity.toLowerCase()
     let desc=obj[`${activity}`]

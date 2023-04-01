@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="shortcut icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
     <link rel="icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
     <title>ClassFit</title>
+
     <link rel="stylesheet" href="../styles/instructorDash.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="container1">
-            <div>
-                <img src="../Images//logo/logo1.png" alt="">
-            </div>
-            <div class="nav">
-                <a href="">Favorites</a>
-                <a href="">Class Search</a>
-                <a href="">My Classes</a>
-                <a href="">My Packages</a>
-                <a href="">User_Name</a>
-            </div>
-            <div id="btn-1">
-                <select id="pet">
-                    <option>--Show option--</option>
-                    <option>Setting</option>
-                    <option>Help</option>
-                    <option>Switch to Oragniser Views</option>
-                    <option>Log out</option>
-                </select>
-            </div>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">
+            <a href=""><img width="100px" src="../Images/logo/logo1.png" alt=""></a>
         </div>
-        <div class="home">
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a href="/">Activities</a></li>
+                <li><a href="/">Clients</a></li>
+                <li class="services">
+                    <a href="/">Classes</a>
+                    <!-- DROPDOWN MENU -->
+                    <ul class="dropdown">
+                        <li><a href="/">My Classes </a></li>
+                        <li><a href="/">Create Classes</a></li>
+                    </ul>
+                </li>
+                <li class="services">
+                    <a href="/">Class Packages</a>
+                    <!-- DROPDOWN MENU -->
+                    <ul class="dropdown">
+                        <li><a href="/">Create a Packages </a></li>
+                        <li><a href="/">Edit a Packages</a></li>
+                        <li><a href="/">Buy a Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="/">Payments</a></li>
+                <li><a href="/">Tools</a></li>
+            </div>
+        </ul>
+    </nav>
+    <div class="box1">
+        <div class="homeSection">
             <h1>Home</h1>
         </div>
     </div>
 </body>
+
 </html>

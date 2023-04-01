@@ -71,7 +71,7 @@ button, #submit_btn {
     border-radius: 5px;
     background-color: #b8d8d4;
     /* color: gray; */
-    color: black;
+    color: black !important;
     border: none;
     cursor: pointer;
 }
@@ -123,3 +123,4 @@ button:hover, #submit_btn:hover{
     justify-content: center;
  }
 }
+

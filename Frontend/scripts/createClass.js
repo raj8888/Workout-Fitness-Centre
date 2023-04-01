@@ -42,16 +42,17 @@ async function classSaveInDB(obj){
         });
         let data = await res.json();
         if(res.status==400){
-            alert(data.message)
+            // alert(data.message)            
+            swal({text: data.message, icon: "error", button: "ok", timer:1000})
             console.log(data.error)
-            // window.location.assign("/frontend/pages/login.html");
         }else{
-            alert(data.message);
+            // alert(data.message);
+            swal({text: data.message, icon: "success", button: "ok", timer:1000})
             console.log(data.classes);
-            // window.location.assign("/frontend/pages/login.html");
         }
     } catch (error) {
-        alert("Server not responding");
+        // alert("Server not responding");
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
         console.log(error.message)
     }
 }

@@ -71,18 +71,26 @@ async function userSaveInDB(obj){
         });
         let data = await res.json();
         if(res.status==400){
-            alert(data.error)
-            window.location.assign("/frontend/pages/login.html");
+            // alert(data.error)
+            swal({text: data.error, icon: "error", button: "ok", timer:1000})
+            .then(()=>{
+                window.location.assign("/frontend/pages/login.html");
+            })
         }else if(res.status==401){
-            alert(data.message);
+            // alert(data.message);
+            swal({text: data.message, icon: "error", button: "ok", timer:1000})
             console.log(data.error);
         }else{
-            alert(data.message);
-            console.log(data.user);
-            window.location.assign("/frontend/pages/login.html");
+            // alert(data.message);
+            console.log(data.user);            
+            swal({text: data.message, icon: "success", button: "ok", timer:1000})
+            .then(()=>{
+                window.location.assign("/frontend/pages/login.html");
+            })
         }
     } catch (error) {
-        alert("Server not responding");
+        // alert("Server not responding");
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
         console.log(error.message)
     }
 }
