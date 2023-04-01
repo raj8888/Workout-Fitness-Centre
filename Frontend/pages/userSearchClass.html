@@ -8,9 +8,44 @@
     <link rel="shortcut icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
     <link rel="icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/userSearchClass.css">
+    <link rel="stylesheet" href="../styles/userDashboard.css">
     <title>Search Classes</title>
 </head>
 <body>
+    <nav class="navbar">
+
+     
+        
+        <div class="logo"><img src="../Images//logo/logo.png" alt=""></div>
+        
+    
+        
+            <ul class="nav-links">
+        
+    
+        
+                <input type="checkbox" id="checkbox_toggle" />
+        
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        
+        
+                <div class="menu">
+            
+                    <li><a href="./userDashboard.html">Home</a></li>
+            
+                    <li><a href="./userSearchClass.html">Class Search</a></li>
+            
+                    <li><a href="./userDashboard.html">My Classses</a></li>
+            
+                    <li><a href="./userDashboard.html">Favorites</a></li>
+
+                    <li><a href="../pages/login.html" onclick="logoutFun()">Logout</a></li>
+            
+                </div>
+        
+            </ul>
+        
+    </nav>
     <div id="middlediv">
         <h2 id="searchTitle">Class Search</h2>
 
@@ -82,3 +117,8 @@
 </body>
 <script type="module"  src="../scripts/userSearchClass.js"></script>
 </html>
+<script>
+    function logoutFun(){
+    sessionStorage.clear();
+}
+</script>
