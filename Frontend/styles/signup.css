@@ -65,7 +65,7 @@ select{
     padding: 5px;
     border-radius: 3px;
 }
-button, #submit_btn {
+#container button, #submit_btn {
     width: 250%;
     padding: 10px;
     border-radius: 5px;
@@ -80,7 +80,7 @@ button, #submit_btn {
     width: 95% !important;
 }
 
-button:hover, #submit_btn:hover{
+#container button:hover, #submit_btn:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #createClass input{
