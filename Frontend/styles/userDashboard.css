@@ -37,8 +37,10 @@ a {
     /* LOGO */
     
     .logo img{
-       width:15%;
-       margin-left: 2%;
+    width: 60px;
+    border: 5px solid #b8d8d4;;
+    border-radius: 50%;
+    margin-left: 20px;
     }
     
     /* NAVBAR MENU */
@@ -266,3 +268,210 @@ a {
      
      }
 }  
+
+#clinedashtitle{
+    background-color:#b9d9d4;
+    padding: 5px 0px;
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    margin-top: 2%;
+    font-size: 20px;
+}
+
+#clientinfo{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+#clientinfo div{
+    border-radius: 8px;
+}
+#clientname{
+    background-image: url("https://app.classfit.com/static/media/Home_background.fbc59c2a.svg");
+    background-size: cover;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   height: 150px;
+}
+#profimgdiv{
+   width: 30%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#clientnamediv{
+    width: 70%;
+}
+#clientnamediv p{
+    color: white;
+    font-size: 18px;
+}
+
+#profileimg{
+    
+    padding: 0;
+    width: 100px;
+    /* height: 100; */
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 0.357rem solid #fff;
+    background-color: #fff;
+    box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
+    display: block;
+}
+
+#clineclass{
+    width: 48%;
+    height: 130px;
+    overflow: scroll;
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+}
+
+@media(min-width: 20px) and (max-width: 700px){
+    #clientinfo{
+        flex-direction: column;
+    }
+    #clientname{
+        width: 95%;
+        margin: auto;
+    }
+    #clineclass{
+        width: 92%;
+        margin: auto;
+        margin-top: 1%;
+    }
+    #profileimg{
+        width: 70px;
+    }
+    #clientnamediv p{
+        font-size: 15px;
+    }
+
+}
+#notclassdiv{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.notclassrender{
+    color: rgb(120, 120, 120);
+    font-size: 17px;
+    word-spacing: 5px;
+}
+
+#searchanc{
+    color: #3b3b3b;
+}
+
+#clientclasstitle{
+    background-color:#b9d9d4;
+    padding: 5px 0px;
+    width: 94%;
+    margin: auto;
+    margin-top: 2%;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+#allclassescard{
+    margin-top: 10px;
+    }
+    
+    .imgclassdiv{
+        display: flex;
+        align-items: center;
+    }
+    .classimages{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+    
+    .classcard{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .imgandins , .actandseat{
+        display: flex;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 30%;
+        align-items: center;
+    }
+    
+    .joinclassdiv{
+       width: 20%;
+       /* background-color: red; */
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     } 
+     .joinclassbutton{
+        padding: 7px;
+        border-radius: 5px;
+        width: 60%;
+        background-color: #b9d8d5;
+        border: none;
+     }
+     .joinclassbutton:hover{
+        background-color:#beebe5;
+        cursor: pointer;
+     }
+     .singleclasslink{
+        text-decoration: none;
+        color: #809c98;
+        text-decoration: underline;
+     }
+    @media(min-width: 430px) and (max-width: 1050px){
+        .imgandins , .actandseat{
+            width: 38%;
+        }
+        .joinclassdiv{
+            width: 15;
+        }
+    }
+    @media(min-width: 20px) and (max-width: 550px){
+        .imgandins{
+            width:37%;
+            flex-direction: column;
+        }
+        .imgandins{
+            text-align: right;
+            align-items: end;
+            font-size: 15px;
+        }
+         .actandseat{
+            width:25%;
+            flex-direction: column;
+            text-align: center;
+        }
+        .joinclassdiv{
+            width: 20%;
+        }
+        .classimages{
+            width: 50px;
+            height: 50px;
+        }
+        .joinclassdiv{
+            width: 35%;
+        }
+    }
+    
+    
