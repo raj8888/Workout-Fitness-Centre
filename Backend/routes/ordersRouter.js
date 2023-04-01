@@ -4,6 +4,7 @@ require('dotenv').config()
 let {get_date,get_time}=require("../utils/utils")
 const {ClassesModel} = require("../models/ClassesModel");
 const {UserModel} = require("../models/userModel");
+const {mailOrderDetail} = require("../config/mailer");
 
 
 const ordersRouter = express.Router();
@@ -48,25 +49,23 @@ ordersRouter.get("/user/:id", async (req,res)=>{
 
 // Order Check Availablity
 ordersRouter.post("/checkAvailablity", async (req,res)=>{
-    console.log("hi")
-    res.send({message:"Slot Available, Click on next for payment"})
-    // let payload = req.body;
-    // let classID = payload.classID;
-    // try{
-    //     let classes = await ClassesModel.findOne({_id:classID});
-    //     // console.log(classes,classID)
-    //     if(classes.clients.includes(payload.userID)){            
-    //         res.status(401).send({message:"You have already registered for this class"})
-    //     }else{
-    //         if(classes.seatOccupied < classes.seatTotal){
-    //             res.status(200).send({message:"Slot Available, Click on next for payment"})     
-    //         }else{
-    //             res.status(401).send({message:"All seats are Booked"})
-    //         }
-    //     }
-    // }catch(error){
-    //     res.status(400).send({message:"Something went wrong",error:error.message})
-    // }
+    let payload = req.body;
+    let classID = payload.classID;
+    try{
+        let classes = await ClassesModel.findOne({_id:classID});
+        console.log(classes,classID)
+        if(classes.clients.includes(payload.userID)){            
+            res.status(401).send({message:"You have already registered for this class"})
+        }else{
+            if(classes.seatOccupied < classes.seatTotal){
+                res.status(200).send({message:"Slot Available, Click on next for payment"})     
+            }else{
+                res.status(401).send({message:"All seats are Booked"})
+            }
+        }
+    }catch(error){
+        res.status(400).send({message:"Something went wrong",error:error.message})
+    }
 })
 
 // Order creation
@@ -77,11 +76,14 @@ ordersRouter.post("/create", async (req,res)=>{
     payload.createdTime=get_time();
     let classID = payload.classID;
     try{        
+        let classes = await ClassesModel.findOne({_id:classID});
         let order = new OrdersModel(payload);
         await order.save();                
         await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
+        let user = await UserModel.findOne({_id:payload.userID});
         await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
-        res.status(200).send({message:"Order created",order})           
+        mailOrderDetail(order,classes,user)
+        res.status(200).send({message:"Congratulations! Order successful, Order Details shared on your email.",order})   
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
     }

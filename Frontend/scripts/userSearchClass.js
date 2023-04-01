@@ -21,10 +21,12 @@ async function getAllClass(){
             newData=res.classes
             renderAllData(res.classes)})
        }else{
-        alert("Classes Not Fetched")
+        // alert("Classes Not Fetched")
+        swal({text: "Classes Not Fetched", icon: "error", button: "ok", timer:1000})
        }
        } catch (error) {
-        alert("Server not responding");
+        // alert("Server not responding");
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
         console.log(error.message)
        }
 }
