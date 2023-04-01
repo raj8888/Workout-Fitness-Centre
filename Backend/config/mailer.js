@@ -16,7 +16,6 @@ const mailOrderDetail = (order, classes, user) => {
       subject: "Congratulations! Order successful from Workout Fitness Center",
       text: "from Workout Fitness Center",
       html: `
-        <h1>Your OTP is :- sup</h1>
         <h1>Hello ${user.name}</h1>
         <p>Thank you for booking a fitness class with us.</p>
         <h2>Here are your order details:-<h2> 
