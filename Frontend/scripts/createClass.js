@@ -48,6 +48,9 @@ async function classSaveInDB(obj){
         }else{
             // alert(data.message);
             swal({text: data.message, icon: "success", button: "ok", timer:1000})
+            .then(()=>{ 
+                window.location.assign("/frontend/pages/trainerDashboard.html");
+            })
             console.log(data.classes);
         }
     } catch (error) {

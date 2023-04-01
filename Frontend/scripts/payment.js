@@ -27,8 +27,11 @@ async function orderClass(obj){
                 alert(data.message)
                 console.log(data.error)
             }else{
-                alert(data.message);
-                window.location.assign("/frontend/pages/userdashboard.html");
+                // alert(data.message);                          
+                swal({text: data.message, icon: "success", button: "ok", timer:1000})
+                .then(()=>{
+                    window.location.assign("/frontend/pages/userdashboard.html");
+                })
             }
     } catch (error) {
       // alert("Server not responding");
