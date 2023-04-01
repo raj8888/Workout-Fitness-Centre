@@ -110,63 +110,16 @@ button:hover, #submit_btn:hover{
     display: none;
  }
  #form{
-    width: fit-content;
-    padding: 10px;
-    margin: auto;
+   width: max-content;
+   margin-right: 20%;
  }
- #name,#pass, #top  {
-    width: 100%;
- }
-#top input {
-    width: 100%;
- }
- #email input{
-    width:240%;
-    margin-left: -16px;
- }
- #country1 input{
-    width:240%;
-    margin-left: -15px;
- }
- button{
-    margin-left: -15px;
-    width: 245%;
- }
- select{
-    margin-left: -15px;
- }
-#select label, #email label, #country1 label{
-    margin-left: -10px;
-}
-#form1{
-    width:300px;
-    margin: auto;
-    padding: -20px;
-}
-#form1 button{
-    margin-left: 0%;
-}
-#left_img_part, #left_img_part_signup{
-    margin-right: 0px;
-}
 
 }
 
-@media screen and (max-width: 301px) {
-    #form1{
-        width:fit-content;
-    }
-    #form1 input{
-        width:fit-content;
-    }
-    #logo_img img{
-        width: 80px;
-    }
-    #form1 img{
-        margin-left: -10px;
-    }
-    #left_img_part, #left_img_part_signup{
-        margin-right: 0px;
-    }
-    
+@media screen and (max-width: 450px) {
+ #container{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+ }
 }
