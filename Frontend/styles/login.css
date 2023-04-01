@@ -74,4 +74,9 @@ button:hover{
        display: flex;
        justify-content: center;
     }
+    #form{
+        width: max-content;
+        margin-right: 10%;
+        
+    }
    }
