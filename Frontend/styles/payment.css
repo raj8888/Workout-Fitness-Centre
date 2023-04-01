@@ -17,26 +17,29 @@
     justify-content: center;
     flex-flow: column;
     padding-bottom: 60px;
+    margin-top: 20px;
 }
 
 .container form{
     background: white;
     border-radius: 5px;
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 20px;
-    width: 600px;
+    width: max-content;
     padding-top: 160px;
+    
 }
 
 .container form .inputBox{
     margin-top: 20px;
+    
 }
 
 .container form .inputBox span{
     display: block;
     color:#999;
     padding-bottom: 5px;
+    
 }
 
 .container form .inputBox input,
@@ -59,7 +62,7 @@
 
 .container form .submit-btn{
     width: 100%;
-    background:linear-gradient(45deg, rgb(223, 0, 111), #ec7dc3);
+    background:linear-gradient(45deg, #5f9094, #b8d8d4);
     margin-top: 20px;
     padding: 10px;
     font-size: 20px;
@@ -77,7 +80,7 @@
 .container .card-container{
     margin-bottom: -150px;
     position: relative;
-    height: 250px;
+    height: 240px;
     width: 400px;
 }
 
@@ -86,13 +89,14 @@
     height: 100%;
     width: 100%;
     top: 0; left: 0;
-    background:linear-gradient(45deg, rgb(223, 0, 111), #ec7dc3);
+    background:linear-gradient(45deg,#5f9094,#b8d8d4);
     border-radius: 5px;
     backface-visibility: hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,.2);
     padding:20px;
     transform:perspective(1000px) rotateY(0deg);
     transition:transform .4s ease-out;
+
 }
 
 .container .card-container .front .image{
@@ -130,7 +134,7 @@
     top:0; left: 0;
     height: 100%;
     width: 100%;
-    background:linear-gradient(45deg, rgb(223, 0, 111), #ec7dc3);
+    background:linear-gradient(45deg, #5f9094,#b8d8d4);
     border-radius: 5px;
     padding: 20px 0;
     text-align: right;
@@ -171,42 +175,17 @@
     height: 30px;
 }
 @media screen and (max-width: 1000px){
-    .container form{
-        width: 50%;
-        margin: auto;
+   
+    .container{
+        padding: 30px;
+   
     }
-    .container .card-container .front{
-        width:100%;
-        margin: auto;
-    }
-    .container .card-container .back{
-        width:100%;
-        margin: auto;
-    }
-    .container .card-container .front .image img{
-        height: 40px;
-    }
-    
 }
 @media screen and (max-width: 450px){
-    .container form{
-        width: 100%;
-        margin: auto;
-    }
-    .container .card-container .front{
-        width:100%;
-        margin: auto;
-    }
-    .container .card-container .back{
-        width:100%;
-        margin: auto;
-    }
-    .container .card-container .front .image img{
-        height: 40px;
-    }
-    
-    .container form .flexbox{
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
+   
+
+    .container{
+        padding: 250px;
+   
     }
 }
