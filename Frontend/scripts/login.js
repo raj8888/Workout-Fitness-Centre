@@ -1,7 +1,7 @@
 let email = document.querySelector("#email")
 const password  = document.querySelector("#password")
 let log = document.querySelector("#sign")
-import baseURL from "./baseUrl.js"
+import baseURL from "./baseURL.js"
 
 log.addEventListener("click",()=>{
   let obj ={

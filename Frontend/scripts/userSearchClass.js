@@ -33,7 +33,7 @@ async function getAllClass(){
 let allclassescard=document.getElementById("allclassescard")
 function renderAllData(data){
     let allData=data
-    // console.log(allData)
+    console.log(data)
     allclassescard.innerHTML=""
     let map_allData=allData.map(elem=>{
         return` <div class="classcard">
