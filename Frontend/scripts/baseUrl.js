@@ -1,3 +1,4 @@
 // let baseURL= "http://localhost:4500";
-let baseURL= "https://motionless-dog-jodhpurs.cyclic.app";
+let baseURL= "https://stormy-flannel-shirt-lion.cyclic.app/user/all"; // cyclic
+// let baseURL= "https://workout-fitness-centre-backend.onrender.com/"; // render.com
 export default baseURL;
