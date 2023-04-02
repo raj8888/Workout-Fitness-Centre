@@ -122,13 +122,9 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-<!-- ![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link/to/img.png)
-![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link/to/img.png)
-![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link/to/img.png) -->
-<p>
-  <img src="https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link/to/img.png"  title="hover text">
-  <img src="https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link/to/img.png"alt="accessibility text">
-</p>
+![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
+![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
+![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
 
 ## Demo
 
