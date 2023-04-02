@@ -25,7 +25,9 @@ venue.addEventListener("change",()=>{
 })
 
 date_time.addEventListener("change",()=>{
+    if(venue.value=="online"){
         locationOrLink.value= "https://us06web.zoom.us/j/9314210793";
+    }
 })
 
 form.addEventListener("submit",(e)=>{
