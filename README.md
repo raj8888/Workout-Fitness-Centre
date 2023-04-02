@@ -122,9 +122,9 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-![App Screenshot](./Frontend/Images/Classes_Images/aerobics1.jpg)
-![App Screenshot](./Frontend/Images/Classes_Images/yoga2.jpg)
-![App Screenshot](./Frontend/Images/Classes_Images/crossfit1.jpg)
+![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link)
+![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link)
+![App Screenshot](https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link)
 
 ## Demo
 
