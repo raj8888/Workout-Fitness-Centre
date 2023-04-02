@@ -17,6 +17,7 @@ venue.addEventListener("change",()=>{
     if(venue.value=="offline"){
         locationOrLink.readOnly = false;
         locationOrLink.placeholder= "Enter City name";
+        locationOrLink.value= "Enter City name";
     }else{
         locationOrLink.readOnly = true;
         locationOrLink.placeholder= "Select Class Date & Time to generate class link";
@@ -31,6 +32,7 @@ date_time.addEventListener("change",()=>{
 })
 
 form.addEventListener("submit",(e)=>{
+    
     e.preventDefault();
 
     let date_time= form.date_time.value.split("T");
