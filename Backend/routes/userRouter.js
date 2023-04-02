@@ -20,6 +20,7 @@ userRouter.get("/all", async (req,res)=>{
         res.status(200).send({message:"User Data Fetched",users})
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
@@ -31,6 +32,7 @@ userRouter.get("/:id", async (req,res)=>{
         res.status(200).send({message:"User Data Fetched",user})
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
@@ -59,6 +61,7 @@ userRouter.post("/register", async (req,res)=>{
         }
     }catch(error){
         res.status(400).send({error:error.message})
+        console.log(error)
     }
 })
 
@@ -90,6 +93,7 @@ userRouter.post("/login", async (req,res)=>{
         }
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
@@ -102,6 +106,7 @@ userRouter.patch("/update/:id", async (req,res)=>{
         res.status(200).send({message:"User data updated",user})
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
@@ -114,6 +119,7 @@ userRouter.delete("/delete/:id", async (req,res)=>{
         res.status(200).send({message:"User data deleted"})
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
+        console.log(error)
     }
 })
 
