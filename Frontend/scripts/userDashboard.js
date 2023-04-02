@@ -5,7 +5,7 @@ if(!loggedInUser){
     window.location.assign("/frontend/pages/login.html");
 }
 let loggedInUserEmail = loggedInUser.email;
-console.log(loggedInUser)
+// console.log(loggedInUser)
 
 
 let totallength;
@@ -39,7 +39,7 @@ function renderUserInfo(totallength){
 allclientinfo.innerHTML=''
 allclientinfo.innerHTML=`<div id="clientname">
 <div id="profimgdiv">
-    <img src="https://classfit-assets-live.s3.amazonaws.com/backup/images/upload/ply/ply.png" alt="" id="profileimg">
+    <img src=${renderProfileImg()} alt="" id="profileimg">
 </div>
 <div id="clientnamediv">
     <p>Hi, ${loggedInUser.name}</p>
@@ -80,7 +80,7 @@ async function getClass(id){
         })
         let temp= await fetchingData.json()
         if(fetchingData.ok){
-            console.log(temp)
+            // console.log(temp)
             renderderAllData(temp.classes)
         }else{
             console.log(temp)
@@ -98,7 +98,7 @@ async function getClass(id){
 let divForRender=document.getElementById("allclassescard")
 
 async function renderderAllData(allData){
-    console.log(allData)
+    // console.log(allData)
     divForRender.innerHTML=""
     let map_allData=allData.map(elem=>{
         return` <div class="classcard">
@@ -175,8 +175,14 @@ function renderImages(actname){
 }
 
 function getRandomItem(arr) {
-   let randomIndex = Math.floor(Math.random() * 2);
+   let randomIndex = Math.floor(Math.random() * arr.length);
    let item = arr[randomIndex];
   return item;
 }
 
+function renderProfileImg(){
+    let arr=["https://images.pexels.com/photos/10929340/pexels-photo-10929340.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/5094997/pexels-photo-5094997.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/4761663/pexels-photo-4761663.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/4401806/pexels-photo-4401806.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/16015725/pexels-photo-16015725.jpeg?auto=compress&cs=tinysrgb&w=600"]
+
+   let imgLink= getRandomItem(arr)
+   return imgLink
+}

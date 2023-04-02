@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+h4{
+    padding-bottom: 7px;
+}
+#renderallinfo{
+    margin-bottom: 30px;
+}
 body{
     background-color: #f9f8f9;
 }

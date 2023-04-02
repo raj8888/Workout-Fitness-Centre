@@ -6,8 +6,19 @@ if(!loggedInUser){
 }
 let loggedInUserEmail = loggedInUser.email;
 
+
 const urlParams = new URLSearchParams(window.location.search)
 const classId = urlParams.get("id")
+
+
+function toggleClassLinkVisibility(){
+    if(!loggedInUser.classes.includes(classId)) {
+        // linkH4Value
+        document.getElementById("linkH4Value").innerText="Class not booked yet.";
+        // document.getElementById("linkH4Key").style.display="none";
+    }
+}
+
 getAllClass(classId)
 async function getAllClass(classId){
     try{
@@ -26,7 +37,7 @@ async function getAllClass(classId){
        }else{
         alert("Classes Not Fetched")
         swal({text: "Classes Not Fetched", icon: "error", button: "ok", timer:1000})        
-       }
+       }    
        } catch (error) {
         console.log(error)
        }
@@ -54,7 +65,7 @@ async function getTrainer(trainerID){
 let mainDiv=document.getElementById('renderallinfo')
 
 async function  renderAllData(classes,trainerInfo){
-    console.log(classes,trainerInfo)
+    // console.log(classes,trainerInfo)
    mainDiv.innerHTML=`
    <img src=${renderImages(classes.activity)} alt="" id="activityimg">
 
@@ -82,7 +93,7 @@ async function  renderAllData(classes,trainerInfo){
                    <h4>Date :</h4>
                    <h4>Time :</h4>
                    <h4>Mode:</h4>
-                   <h4>Link/Location :</h4>
+                   <h4 id="linkH4Key">Link/Location :</h4>
                    <h4>Duration:</h4>
                    <h4>Total Seats :</h4>
                    <h4>Seats Occupied :</h4>
@@ -93,7 +104,7 @@ async function  renderAllData(classes,trainerInfo){
                    <h4>${classes.classDate}</h4>
                    <h4>${classes.classTime}</h4>
                    <h4>${classes.venue}</h4>
-                   <h4>${classes.locationOrLink}</h4>
+                   <h4 id="linkH4Value">${classes.locationOrLink}</h4>
                    <h4>${classes.duration}</h4>
                    <h4>${classes.seatTotal}</h4>
                    <h4>${classes.seatOccupied}</h4>
@@ -134,6 +145,7 @@ async function  renderAllData(classes,trainerInfo){
     let id = event.target.dataset.id;
     window.location.assign(`./bookClass.html?id=${id}`)
     })
+    toggleClassLinkVisibility()
 }
 
 
@@ -147,9 +159,13 @@ function renderTrainerProfile(){
 function rendermode(mode){
     mode=mode.toLowerCase()
     if(mode=="online"){
-        return 'https://beta.classfit.com/images/zoom-img-cover.png'
+        return 'https://img.freepik.com/free-vector/flat-design-online-yoga-class_23-2148533685.jpg?w=740&t=st=1680414651~exp=1680415251~hmac=a791e4c418b3b87a3c821274b4fd5e98ae8bfc2d8176b40799a2826cd4123ca6https://img.freepik.com/free-vector/flat-design-online-yoga-class_23-2148533685.jpg?w=740&t=st=1680414651~exp=1680415251~hmac=a791e4c418b3b87a3c821274b4fd5e98ae8bfc2d8176b40799a2826cd4123ca6'
+        // return 'https://img.freepik.com/free-vector/hand-drawn-online-yoga-class-concept_23-2148563475.jpg?w=740&t=st=1680414196~exp=1680414796~hmac=13a91aae4059df3bf5e76c9b55b4bd885aa21c7503f9225439c450615ff0481a'
+        // return 'https://img.freepik.com/free-vector/flat-design-online-yoga-class-style_23-2148549504.jpg?w=740&t=st=1680414576~exp=1680415176~hmac=1e9847c8f673dc0edf5d0ad6c24cf364830518e86dec7bdb71dd1dd56d575ca4'
+        // return 'https://beta.classfit.com/images/zoom-img-cover.png'
     }else{
-        return `https://e7.pngegg.com/pngimages/992/203/png-clipart-internet-t-shirt-9gag-online-and-offline-humour-t-shirt-text-logo.png`
+        return `https://img.freepik.com/free-vector/pregnant-women-doing-exercises-with-big-ball-cartoon-illustration_74855-14492.jpg?w=740&t=st=1680414881~exp=1680415481~hmac=ad34b4302c74a73603a5534be8a88d00b0ec9e2c6633babb1d4a3318868db729`
+        // return `https://e7.pngegg.com/pngimages/992/203/png-clipart-internet-t-shirt-9gag-online-and-offline-humour-t-shirt-text-logo.png`
     }
 }
 

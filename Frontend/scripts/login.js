@@ -25,7 +25,10 @@ async function loginUser(obj){
         if(res.status==400){
             // alert(data.error)
             swal({text: data.error, icon: "error", button: "ok", timer:1000})
-        }else{
+        }else if(res.status==401){
+            swal({text: data.error, icon: "error", button: "ok", timer:1000})
+        }
+        else{
             // alert(data.message); 
             swal({text: data.message, icon: "success", button: "ok", timer:1000})
             .then(()=>{

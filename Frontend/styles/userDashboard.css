@@ -23,11 +23,13 @@ a {
     align-items: center;
     
     justify-content: space-between;
-    
     padding-right: 25px;
-    
-    
-    /* background-color: teal; */
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    width: 99%;
+    margin: auto;
+    background-color:white;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
  
     
@@ -57,7 +59,7 @@ a {
     
     .menu li:hover {
     
-    background-color: #4c9e9e;
+    background-color: #b8d8d4;
     
     border-radius: 5px;
     
@@ -69,6 +71,13 @@ a {
     
     padding: 5px 14px;
     
+    }
+
+    .menu li a{
+        color: black;
+    }
+    .menu li:hover a{
+        color: white;
     }
     
     /* DROPDOWN MENU */
@@ -133,7 +142,7 @@ a {
        .hamburger {
        
        display: none;
-       
+       margin-right: 10px;
        font-size: 24px;
        
        user-select: none;
@@ -162,7 +171,7 @@ a {
            .menu li:hover {
            
            display: inline-block;
-           
+          
            background-color:#4c9e9e;
            
            transition: 0.3s ease;
@@ -170,7 +179,6 @@ a {
            }
            
            .menu li + li {
-           
            margin-top: 12px;
            
            }
@@ -184,7 +192,7 @@ a {
            .hamburger {
            
            display: block;
-           
+                  
            }
            
            .dropdown {
@@ -249,7 +257,7 @@ a {
      .hamburger {
      
      display: block;
-     
+     margin-right: 10px;
      }
      
      .dropdown {
@@ -290,7 +298,7 @@ a {
     border-radius: 8px;
 }
 #clientname{
-    background-image: url("https://app.classfit.com/static/media/Home_background.fbc59c2a.svg");
+    background-image: url("https://images.pexels.com/photos/949129/pexels-photo-949129.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-size: cover;
     width: 48%;
     display: flex;
@@ -316,7 +324,7 @@ a {
     
     padding: 0;
     width: 100px;
-    /* height: 100; */
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;

@@ -5,38 +5,165 @@ if(!loggedInUser){
     window.location.assign("/frontend/pages/login.html");
 }
 let loggedInUserEmail = loggedInUser.email;
+console.log(loggedInUser)
 
-getAllClass();
-let newData;
-async function getAllClass(){
+
+
+let totallength;
+getAllClassLength()
+
+async function getAllClassLength(){
     try{
-     let dataFetch=await fetch(baseURL+"/class/all",{
-        headers:{   
-            authorization:`Bearer ${loggedInUserEmail}`
-        }
-    })
-    if(dataFetch.ok){
-        let temp=dataFetch.json()
-        .then(res=>{
-            newData=res.classes
-            renderAllData(res.classes)})
-       }else{
-        // alert("Classes Not Fetched")
-        swal({text: "Classes Not Fetched", icon: "error", button: "ok", timer:1000})
-       }
-       } catch (error) {
-        // alert("Server not responding");
-        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
-        console.log(error.message)
-       }
+        let dataFetch=await fetch(baseURL+"/class/all",{
+           headers:{   
+               authorization:`Bearer ${loggedInUserEmail}`
+           }
+       })
+       if(dataFetch.ok){
+           let temp=dataFetch.json()
+           .then(res=>{
+               let getTrainerInfo=JSON.parse(sessionStorage.getItem("loggedInUser"))
+              let trainerID=getTrainerInfo._id
+              let trainerClasses=findClass(res.classes,trainerID)
+              totallength=trainerClasses.length
+              renderUserInfo(totallength)
+            })
+          }else{
+        //    alert("Classes Not Fetched")
+          }
+          } catch (error) {
+        //    alert("Server not responding");
+           console.log(error.message)
+          }
 }
 
 
-let allclassescard=document.getElementById("allclassescard")
+
+let allclientinfo=document.getElementById("clientinfo")
+
+function renderUserInfo(totallength){
+allclientinfo.innerHTML=''
+allclientinfo.innerHTML=`<div id="clientname">
+<div id="profimgdiv">
+    <img src=${renderProfileImg()} alt="" id="profileimg">
+</div>
+<div id="clientnamediv">
+    <p>Hi, ${loggedInUser.name}</p>
+    <p>Welcome back - Let's get Started! </p>
+</div>
+</div>
+<div id="clineclass">
+ <div id="notclassdiv">
+   ${renderTotalClass(totallength)}
+</div> 
+</div>`
+}
+
+
+function renderTotalClass(count){
+if(count<=0){
+return ` <p class="notclassrender">You didn't created any class.</p>
+<p class="notclassrender">For create class <a id='searchanc' href="./createClass.html">click here.</a></p>`
+}else{
+    return `<div id="notclassdiv">
+    <p class="notclassrender">Total classes created by you is ${count}.</p>
+<p class="notclassrender">For create more class <a id='searchanc' href="./createClass.html">click here.</a></p>
+</div>`
+}
+}
+
+
+
+
+getClass(loggedInUser._id)
+async function getClass(id){
+    try {
+        let fetchingData=await fetch(baseURL+`/class/searchByUserID/${id}`,{
+            method:"GET",
+            headers:{   
+                authorization:`Bearer ${loggedInUserEmail}`
+            }
+        })
+        let temp= await fetchingData.json()
+        if(fetchingData.ok){
+            console.log(temp)
+            // renderderAllData(temp.classes)
+        }else{
+            console.log(temp)
+            alert(fetchingData.message)
+        }
+    } catch (error) {
+        alert('Server Error')
+        console.log(error.message)
+    }
+
+}
+
+function getRandomItem(arr) {
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    let item = arr[randomIndex];
+   return item;
+ }
+ 
+ function renderProfileImg(){
+     let arr=["https://images.pexels.com/photos/10929340/pexels-photo-10929340.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/5094997/pexels-photo-5094997.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/4761663/pexels-photo-4761663.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/4401806/pexels-photo-4401806.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/16015725/pexels-photo-16015725.jpeg?auto=compress&cs=tinysrgb&w=600"]
+ 
+    let imgLink= getRandomItem(arr)
+    return imgLink
+ }
+
+
+
+
+
+ 
+getAllClass()
+
+async function getAllClass(){
+    try{
+        let dataFetch=await fetch(baseURL+"/class/all",{
+           headers:{   
+               authorization:`Bearer ${loggedInUserEmail}`
+           }
+       })
+       if(dataFetch.ok){
+           let temp=dataFetch.json()
+           .then(res=>{
+               let getTrainerInfo=JSON.parse(sessionStorage.getItem("loggedInUser"))
+              let trainerID=getTrainerInfo._id
+              let trainerClasses=findClass(res.classes,trainerID)
+              renderAllData(trainerClasses)
+            })
+          }else{
+        //    alert("Classes Not Fetched")
+          }
+          } catch (error) {
+        //    alert("Server not responding");
+           console.log(error.message)
+          }
+}
+
+ let allclassescard=document.getElementById("allclassescard")
+
+ function findClass(arr,id){
+    
+    let allClass=arr.filter(elem=>{
+        if(elem.trainerID==id){
+            return elem
+        }
+    })
+    return allClass
+}
+
+
 function renderAllData(data){
+    if(data.length<=0){
+        allclassescard.innerHTML=`
+        <p id="classnotcreated">Class not created yet</p>
+        `
+    }else{
     let allData=data
-    // console.log(data)
-    allclassescard.innerHTML=""
+    // allclassescard.innerHTML=""
     let map_allData=allData.map(elem=>{
         return` <div class="classcard">
                     
@@ -61,96 +188,51 @@ function renderAllData(data){
                 </div>
         </div>
         <div class="joinclassdiv">
-            <button class="joinclassbutton" data-id=${elem._id}>Join Class</button>
+            <button class="joinclassbutton" data-id=${elem._id}>Delete Class</button>
         </div>
     </div><hr>`
     })
     allclassescard.innerHTML=map_allData.join("")
-
-    let joicClassbtn=document.querySelectorAll('.joinclassbutton')
-   joicClassbtn.forEach(elem=>{
-    elem.addEventListener('click',(event)=>{
-        let id = event.target.dataset.id;
-        window.location.assign(`./bookClass.html?id=${id}`)
+    
+    let deletclass=document.querySelectorAll('.joinclassbutton')
+    deletclass.forEach(elem=>{
+        elem.addEventListener('click',(event)=>{
+            let classid=event.target.dataset.id
+            deleteClass(classid)
+        })
     })
-   })
+}
 }
 
+async function deleteClass(classid){
+    try {
+        let data=await fetch(baseURL+`/class/delete/${classid}`,{
+            method:"DELETE",
+            headers:{   
+                authorization:`Bearer ${loggedInUserEmail}`
+            }
+        })
+        if(data.ok){
+            // alert("Class Deleted Successfully")
+            swal({text: "Class Deleted Successfully", icon: "success", button: "ok", timer:1000})
+            getAllClass()
+        }else{
+            // alert("Class not deleted")
+            swal({text: "Class not deleted", icon: "error", button: "ok", timer:1000})
+        }
+    } catch (error) {
+        // alert("Server not responding");
+        swal({text: "Server not responding", icon: "error", button: "ok", timer:1000})
+        console.log(error.message)
+    }
+}
 function checkvenue(venue,locationOrLink){
-   if(venue==="online"){
-    return 'Online-via Zoom'
-   }else{
-    return `Venue - At ${locationOrLink}`
-   }
-}
-
-
-let searchbar=document.getElementById("searchBox")
-searchbar.addEventListener('input',(event)=>{
-   let searchdata=searchalldata(event)
-  renderAllData(searchdata)
-})
-
-function searchalldata(event){
-    let searchdata=event.target.value
-    // console.log(newData)
-   let temp=newData.filter(function(elem){
-    let ans=elem.locationOrLink.toLowerCase().includes(searchdata.toLowerCase())||elem.title.toLowerCase().includes(searchdata.toLowerCase())||elem.activity.toLowerCase().includes(searchdata.toLowerCase())||elem.venue.toLowerCase().includes(searchdata.toLowerCase())
-    return ans;
-  })
-return temp;
-}
-
-let activitiname=document.getElementById('acttype')
-activitiname.addEventListener("change",(event)=>{
-    let searchactivity=searchactivityfun(event.target.value)
-    if(searchactivity){
-       return renderAllData(searchactivity)
+    if(venue==="online"){
+     return 'Online-via Zoom'
     }else{
-        allclassescard.innerHTML=`<h2>Data Not Found</h3>`
+     return `Venue - At ${locationOrLink}`
     }
-})
-
-function searchactivityfun(activity){
-   if(activity=="all"){
-    getAllClass()
-   }else{
-    let temp=newData.filter(function(elem){
-        let ans=elem.activity.toLowerCase().includes(activity.toLowerCase())||elem.venue.toLowerCase().includes(activity.toLowerCase())
-        return ans
-    })
-    return temp;
-   }
-}
-
-let attendacesearch=document.getElementById('atttype')
-attendacesearch.addEventListener("change",(event)=>{
-    let searchattendace=searchactivityfun(event.target.value)
-    if(searchattendace){
-     renderAllData(searchattendace) 
-    }else{
-        allclassescard.innerHTML=`<h2>Data Not Found</h3>`
-    }
-})
-
-let pricecomp=document.getElementById('location')
-pricecomp.addEventListener("change",(event)=>{
-    let searchlocation=event.target.value
-    if(searchlocation=="low"){
-        let lowtohigh=newData.sort(function(a,b){
-            return a.price - b.price
-        })
-     renderAllData(lowtohigh)
-    }else if(searchlocation=="high"){
-        let lowtohigh=newData.sort(function(a,b){
-            return b.price - a.price
-        })
-         renderAllData(lowtohigh)
-    }else{
-        getAllClass()
-    }
-})
-
+ }
 
 function renderImages(actname){
     let allImagesData={
@@ -173,13 +255,6 @@ function renderImages(actname){
     }
     let newactname=actname.toLowerCase()
     let name=allImagesData[`${newactname}`]
-    
     let imgLink=getRandomItem(name)
    return(imgLink)
-}
-
-function getRandomItem(arr) {
-   let randomIndex = Math.floor(Math.random() * 2);
-   let item = arr[randomIndex];
-  return item;
 }

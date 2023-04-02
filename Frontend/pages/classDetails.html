@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../Images/favicons/favicon6.ico"
+      type="image/x-icon"
+    />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="icon" href="../Images/favicons/favicon6.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/classDetail.css">
-    <link rel="stylesheet" href="../styles/userDashboard.css">
+    <link
+      rel="icon"
+      href="../Images/favicons/favicon6.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles/classDetail.css" />
+    <link rel="stylesheet" href="../styles/userDashboard.css" />
     <title>Class Details</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
+      <div class="logo"><img src="../Images//logo/logo.png" alt="" /></div>
 
-     
-        
-        <div class="logo"><img src="../Images//logo/logo.png" alt=""></div>
-        
-    
-        
-            <ul class="nav-links">
-        
-    
-        
-                <input type="checkbox" id="checkbox_toggle" />
-        
-                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-        
-        
-                <div class="menu">
-            
-                    <li><a href="./userDashboard.html">Home</a></li>
-            
-                    <li><a href="./userSearchClass.html">Class Search</a></li>
-            
-                    <li><a href="./userDashboard.html">My Classses</a></li>
-            
-                    <li><a href="./userDashboard.html">Favorites</a></li>
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
 
-                    <li><a href="../pages/login.html" onclick="logoutFun()">Logout</a></li>
-            
-                </div>
-        
-            </ul>
-        
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a href="./userDashboard.html">Home</a></li>
+
+          <li><a href="./userSearchClass.html">Class Search</a></li>
+
+          <li><a href="./userDashboard.html">My Classses</a></li>
+
+          <li><a href="./userDashboard.html">Favorites</a></li>
+
+          <li>
+            <a href="../pages/login.html" onclick="logoutFun()">Logout</a>
+          </li>
+        </div>
+      </ul>
     </nav>
     <h2 id="classDetHead">Class Information</h2>
     <div id="renderallinfo"></div>
-</body>
+  </body>
 </html>
 <script type="module" src="../scripts/classDetails.js"></script>
 <script>
-    function logoutFun(){
+  function logoutFun() {
     sessionStorage.clear();
-}
+  }
 </script>
