@@ -173,7 +173,7 @@ function renderAllOrdersData(data){
         <div class="actandseat">
                 <div style="margin-left:-70px">
                     <p><b>Order ID: </b>${elem._id}</p>
-                    <p><b>User ID: </b>${elem.UserID}</p>
+                    <p><b>User ID: </b>${elem.userID}</p>
                     <p><b>class  ID: </b>${elem.classID}</p>  
                 </div>
                 <div>
