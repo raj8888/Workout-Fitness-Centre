@@ -122,7 +122,9 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
+Landing Page:
+
+![App Screenshot](https://i.ibb.co/5BYYksy/Screenshot-286.png)
 ![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
 ![App Screenshot](https://images.pexels.com/photos/14656105/pexels-photo-14656105.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)
 
