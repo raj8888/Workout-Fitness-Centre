@@ -12,7 +12,7 @@ let venue=document.getElementById("venue");
 let locationOrLink=document.getElementById("locationOrLink");
 let date_time=document.getElementById("date_time");
 locationOrLink.readOnly = true;
-    
+
 venue.addEventListener("change",()=>{
     if(venue.value=="offline"){
         locationOrLink.readOnly = false;
@@ -20,6 +20,7 @@ venue.addEventListener("change",()=>{
     }else{
         locationOrLink.readOnly = true;
         locationOrLink.placeholder= "Select Class Date & Time to generate class link";
+        locationOrLink.value= "Select Class Date & Time to generate class link";
     }
 })
 
