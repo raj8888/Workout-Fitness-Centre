@@ -62,21 +62,44 @@ button:hover{
        display: none;
     }
     #container{
+        width: max-content;
         display: flex;
-        justify-content:center
+        justify-content: center;
+     }
+     #container {
+        margin-top: 2%;
+        display: block;
+        width: 100%;
+     }
+     #container #form input{
+        width: 90%;
+    }
+      #container #form{
+        padding: 0px;
+        width: max-content;
+        margin: auto;
      }
    
    }
    
    @media screen and (max-width: 450px) {
     #container{
-       width: max-content;
-       display: flex;
-       justify-content: center;
-    }
-    #form{
         width: max-content;
-        margin-right: 10%;
-        
+        display: flex;
+        justify-content: center;
+     }
+     #container {
+        margin-top: 2%;
+        display: block;
+        width: 100%;
+     }
+     #container #form input{
+        width: 90%;
     }
+      #container #form{
+        padding: 0px;
+        width: 100%;
+        margin: auto;
+     }
+     
    }
