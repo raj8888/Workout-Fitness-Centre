@@ -124,19 +124,19 @@ To run this project, you will need to add the following environment variables to
 
 Landing Page:
 
-![App Screenshot](https://i.ibb.co/5BYYksy/Screenshot-286.png)
+![App Screenshot](https://i.ibb.co/jgVVz32/Screenshot-286.png)
 
 Search Class Page:
 
-![App Screenshot](https://i.ibb.co/wrHfPNY/Screenshot-288.png)
+![App Screenshot](https://i.ibb.co/0VNx6jQ/Screenshot-288.png)
 
 Class Information Page:
 
-![App Screenshot](https://i.ibb.co/c2mHVL9/Screenshot-290.png)
+![App Screenshot](https://i.ibb.co/44QG3dL/Screenshot-290.png)
 
 Book Class Page:
 
-![App Screenshot](https://i.ibb.co/QNGFvtb/Screenshot-292.png)
+![App Screenshot](https://i.ibb.co/ncSsMtg/Screenshot-292.png)
 
 
 ## Demo
