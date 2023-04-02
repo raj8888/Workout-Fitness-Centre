@@ -122,9 +122,9 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-Landing Page:
+Client Dash Board:
 
-![App Screenshot](https://i.ibb.co/jgVVz32/Screenshot-286.png)
+![App Screenshot](https://i.ibb.co/m95Smws/Screenshot-294.png)
 
 Search Class Page:
 
