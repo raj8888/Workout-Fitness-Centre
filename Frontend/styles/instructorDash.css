@@ -21,6 +21,7 @@ li {
 .navbar {
     display: flex;
     align-items: center;
+    z-index: 999 !important;
     justify-content: space-between;
     padding: 20px;
     background-color: white;

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../Images/favicons/favicon6.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="../Images/favicons/favicon6.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles/userSearchClass.css" />
+    <link rel="stylesheet" href="../styles/userDashboard.css" />
+    <title>Search Classes</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><img src="../Images//logo/logo.png" alt="" /></div>
+
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a href="#">Home</a></li>
+
+          <li><a id="allClassesNav">All Classes</a></li>
+          <li><a id="allUsersNav">All Users</a></li>
+          <li><a id="allOrdersNav">All Orders</a></li>
+          <li><a href="../pages/login.html" onclick="logoutFun()">Logout</a></li>
+        </div>
+      </ul>
+    </nav>
+    <div id="middlediv">
+      <h2 id="searchTitle">Class Search</h2>
+
+      <div id="searchdiv">
+        <div id="mainsearchdiv">
+          <p>All Classes</p>
+          <input
+            type="text"
+            placeholder="Search for class here..."
+            id="searchBox"
+          />
+          <button id="mainsearchbutton">Search</button>
+        </div>
+      </div>
+
+      <div id="filterinfo">
+        <div id="activitydiv">
+          <p>Activity</p>
+          <select name="activity" id="acttype">
+            <option value="all">All Activities</option>
+            <option value="aerobics">Aerobics</option>
+            <option value="ballet">Ballet</option>
+            <option value="basketball">Basketball</option>
+            <option value="boxing">Boxing</option>
+            <option value="cardio">Cardio</option>
+            <option value="crossFit">Cross Fit</option>
+            <option value="cycling">Cycling</option>
+            <option value="dance">Dance</option>
+            <option value="football">Football</option>
+            <option value="kickBoxing">Kick Boxing</option>
+            <option value="running">Running</option>
+            <option value="singing">Singing</option>
+            <option value="swimming">Swimming</option>
+            <option value="weightTraining">Weight Training</option>
+            <option value="yoga">Yoga</option>
+            <option value="zumba">Zumba</option>
+          </select>
+        </div>
+        <div id="attendancediv">
+          <p>Attendence</p>
+          <select name="Attendence" id="atttype">
+            <option value="all">All Classes</option>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+        </div>
+        <div id="locationdiv">
+          <p>By Price</p>
+          <select name="location" id="location">
+            <option value="all">All Classes</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="allclassediv">
+        <h3 id="allclasstitle"">All Classes</h3>
+
+        <div id="allclassescard"></div>
+      </div>
+
+      <div id="allusersdiv" style="margin-top:50px">
+        <h3 id="alluserstitle">All Users</h3>
+
+        <div id="alluserscard"></div>
+      </div>
+
+      <div id="allordersdiv" style="margin-top:50px">
+        <h3 id="allorderstitle">All Orders</h3>
+
+        <div id="allorderscard"></div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../scripts/admin.js"></script>
+</html>
+<script>
+  function logoutFun() {
+    sessionStorage.clear();
+  } 
+</script>
