@@ -5,6 +5,15 @@
 body{
     background-color: #f9f8f9;
 }
+h4{
+    padding-bottom: 7px;
+}
+#renderallinfo{
+    margin-bottom: 50px !important;
+}
+#classalldesc{
+    margin: 20px 0px !important;
+}
 
 #classDetHead{
     background-color:#b9d8d5;
@@ -70,7 +79,7 @@ body{
    display: flex; 
    /* justify-content: space-between; */
    /* background-color: red; */
-   margin-top:3%;
+   margin-top:35px;
    padding-left: 2%;
 }
 
@@ -91,9 +100,9 @@ body{
     padding-left: 2%;
 }
 #modeimg{
-    margin-top: 2%;
+    margin-top: 33px;
     width: 90%;
-    height: 180px;
+    height: 220px;
 }
 
 #infotrainer{
@@ -111,7 +120,13 @@ body{
    display: flex;
    flex-direction: column;
    align-items: center;
+   margin-top: 30px;
 }
+#trainermaininfo img{
+    width: 112px;
+    height: 112px;
+    margin-bottom: 2    0px;
+ }
 
 #trainerimg{
     width: 80px;

@@ -21,7 +21,9 @@
    
    }
 
-
+   .menu a {
+      color: #084246;
+  }
 .navbar {
 
    display: flex;
