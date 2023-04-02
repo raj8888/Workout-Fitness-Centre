@@ -90,7 +90,9 @@ async function getClass(id){
             // renderderAllData(temp.classes)
         }else{
             console.log(temp)
-            alert(fetchingData.message)
+            // console.log()
+
+            alert("Server Error")
         }
     } catch (error) {
         alert('Server Error')
@@ -135,10 +137,10 @@ async function getAllClass(){
               renderAllData(trainerClasses)
             })
           }else{
-        //    alert("Classes Not Fetched")
+           alert("Classes Not Fetched")
           }
           } catch (error) {
-        //    alert("Server not responding");
+           alert("Server not responding");
            console.log(error.message)
           }
 }
