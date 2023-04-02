@@ -138,6 +138,10 @@ Class Information Page:
 
 ![App Screenshot](https://i.ibb.co/44QG3dL/Screenshot-290.png)
 
+System Design:
+
+![App Screenshot](https://i.ibb.co/nMXhWhk/SD-Workout-fitness-center.png)
+
 
 
 
