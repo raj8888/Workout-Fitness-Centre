@@ -1,4 +1,4 @@
-#container,#container1{
+#container,#container1,#container2{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,8 +40,10 @@
     width:95% !important; 
 }
 #createClass select{
-    width:94% !important;
+    width:93% ;
+    margin-left: 12px;
 }
+
 #country1 select, #email input{
     width: 240%;
     margin: auto;
@@ -77,7 +79,7 @@ select{
 }
 #submit_btn{
     padding: 10px !important;
-    width: 95% !important;
+    width: 95% 
 }
 
 #container button:hover, #submit_btn:hover{
@@ -92,7 +94,7 @@ select{
 #create, #submit_btn{
     width: 100%;
 }
-#form1 input,#container1 #form input{
+#form1 input,#container1 #form input, #container2 #form input{
     padding: 5px;
     border:1px solid gray;
     border-radius: 3px;
@@ -100,7 +102,7 @@ select{
     margin: auto;
     margin-left: 3%;
 }
-#container1 label{
+#container1 label, #container2 label{
     padding: 5px;
     width: 90%;
     margin: auto;
@@ -122,10 +124,14 @@ select{
 #container1 #form input{
     width: max-content;
 }
-#container1{
+#container1, #container2{
+    display: block;
     width: max-content;
     margin: auto;
 }
+#createClass select{
+    width: 98%;
+ }
 }
 
 @media screen and (max-width: 450px) {
@@ -134,18 +140,21 @@ select{
     display: flex;
     justify-content: center;
  }
- #container1 {
+ #container1,#container2 {
     margin-top: 2%;
     display: block;
     width: 100%;
  }
- #container1 #form input{
+ #container1 #form input,#container2 #form input{
     width: 90%;
 }
- #container1 #form{
+ #container1 #form, #container2 #form{
     padding: 0px;
     width: 100%;
     margin: auto;
+ }
+ #createClass select{
+    width: max-content;
  }
 }
 
