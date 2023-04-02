@@ -175,19 +175,21 @@
     height: 30px;
 }
 @media screen and (max-width: 1000px){
-   
     .container{
-        padding: 30px;
-   
+        width: min-content;
+        height: fit-content;
+        margin: auto;
+        padding: 10px;
     }
-   
-      
+    
 }
-@media screen and (max-width: 450px){
+@media screen and (max-width: 500px){
    
-
     .container{
-        padding: 250px;
-   
+        width: max-content;
+        height: fit-content;
+        margin: auto;
+        padding: 10px;
     }
+    
 }

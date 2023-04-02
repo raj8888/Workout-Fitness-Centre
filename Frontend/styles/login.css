@@ -61,12 +61,9 @@ button:hover{
     #signup_img{
        display: none;
     }
-    #container{
-        width: max-content;
-        display: flex;
-        justify-content: center;
-     }
+    
      #container {
+        width: max-content;
         margin-top: 2%;
         display: block;
         width: 100%;
@@ -83,12 +80,8 @@ button:hover{
    }
    
    @media screen and (max-width: 450px) {
-    #container{
+    #container {
         width: max-content;
-        display: flex;
-        justify-content: center;
-     }
-     #container {
         margin-top: 2%;
         display: block;
         width: 100%;
