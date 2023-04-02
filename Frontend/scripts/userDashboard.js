@@ -5,7 +5,7 @@ if(!loggedInUser){
     window.location.assign("/frontend/pages/login.html");
 }
 let loggedInUserEmail = loggedInUser.email;
-console.log(loggedInUser)
+// console.log(loggedInUser)
 
 
 let totallength;
@@ -80,7 +80,7 @@ async function getClass(id){
         })
         let temp= await fetchingData.json()
         if(fetchingData.ok){
-            console.log(temp)
+            // console.log(temp)
             renderderAllData(temp.classes)
         }else{
             console.log(temp)
@@ -98,7 +98,7 @@ async function getClass(id){
 let divForRender=document.getElementById("allclassescard")
 
 async function renderderAllData(allData){
-    console.log(allData)
+    // console.log(allData)
     divForRender.innerHTML=""
     let map_allData=allData.map(elem=>{
         return` <div class="classcard">

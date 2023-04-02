@@ -119,10 +119,13 @@ select{
    width: max-content;
    margin-right: 20%;
  }
- #container1 #form{
+#container1 #form input{
+    width: max-content;
+}
+#container1{
+    width: max-content;
     margin: auto;
- }
-
+}
 }
 
 @media screen and (max-width: 450px) {
@@ -132,7 +135,17 @@ select{
     justify-content: center;
  }
  #container1 {
+    margin-top: 2%;
     display: block;
+    width: 100%;
+ }
+ #container1 #form input{
+    width: 90%;
+}
+ #container1 #form{
+    padding: 0px;
+    width: 100%;
+    margin: auto;
  }
 }
 

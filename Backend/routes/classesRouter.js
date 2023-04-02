@@ -91,6 +91,16 @@ classesRouter.delete("/delete/:id", async (req,res)=>{
 })
 
 
+// class Update - TESTING ONLY
+classesRouter.patch("/updateTest", async (req,res)=>{
+    try{
+        let classes = await ClassesModel.updateMany({venue:"online"},{locationOrLink:"https://us06web.zoom.us/j/9314210793"});        
+        res.status(200).send({message:"class data updated"})
+    }catch(error){
+        res.status(400).send({message:"Something went wrong",error:error.message})
+    }
+})
+
 
 module.exports= {classesRouter}
 
