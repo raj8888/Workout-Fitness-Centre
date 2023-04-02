@@ -67,12 +67,12 @@ let mainDiv=document.getElementById('renderallinfo')
 async function  renderAllData(classes,trainerInfo){
     // console.log(classes,trainerInfo)
    mainDiv.innerHTML=`
-   <img src=${renderImages(classes.activity)} alt="" id="activityimg">
+    <!--<img src=${renderImages(classes.activity)} alt="" id="activityimg">-->
 
    <div id="classalldesc">
       <div id="imgandjoinbtn">
        <div id="descimg">
-           <img src=${renderTrainerProfile()} alt="" id="trainerimg">
+           <img src=${renderImages(classes.activity)} alt="" id="trainerimg">
        </div>
        <div id="descjoin">
            <button id="joinclassdesc" data-id=${classes._id}>Join Class</button>
@@ -137,6 +137,7 @@ async function  renderAllData(classes,trainerInfo){
        </div>
 
    </div>
+   <img src=${renderImages(classes.activity)} alt="" id="activityimg">
    `
 
    let joinbtn=document.querySelector('#joinclassdesc')
