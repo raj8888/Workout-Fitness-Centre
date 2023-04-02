@@ -27,7 +27,7 @@ async function getClass(classId){
         let data = await res.json();
         if(res.status==400){
             // alert(data.message)
-            swal({text: data.message, icon: "success", button: "ok", timer:1000})
+            swal({text: data.message, icon: "error", button: "ok", timer:1000})
             console.log(data.error);
         }else{    
             displayDataInForm(data.classes);        
@@ -50,13 +50,16 @@ function displayDataInForm(classes){
     form.activity.value = classes.activity; 
     form.seatTotal.value = classes.seatTotal; 
     form.venue.value = classes.venue; 
-    form.locationOrLink.value = classes.locationOrLink; 
     form.duration.value = classes.duration; 
     form.trainerName.value = classes.trainerName;   
     form.date_time.value = date_time;   
     form.date_time.min = date_time;   
     form.date_time.max = classes.classDate+"T"+"22:59:59";   
-
+    if(classes.venue=="online"){
+        form.locationOrLink.value = "Complete booking to  get class link"; 
+    }else{
+        form.locationOrLink.value = classes.locationOrLink; 
+    }
 }       
 
 
