@@ -122,9 +122,13 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-Client Dash Board:
+Client Dashboard:
 
 ![App Screenshot](https://i.ibb.co/m95Smws/Screenshot-294.png)
+
+Trainer Dashboard:
+
+![App Screenshot](https://i.ibb.co/ZNMxpLR/Screenshot-296.png)
 
 Search Class Page:
 
@@ -134,9 +138,7 @@ Class Information Page:
 
 ![App Screenshot](https://i.ibb.co/44QG3dL/Screenshot-290.png)
 
-Book Class Page:
 
-![App Screenshot](https://i.ibb.co/ncSsMtg/Screenshot-292.png)
 
 
 ## Demo
