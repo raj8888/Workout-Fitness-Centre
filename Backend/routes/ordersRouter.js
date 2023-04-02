@@ -81,8 +81,9 @@ ordersRouter.post("/create", async (req,res)=>{
         await order.save();                
         await ClassesModel.findByIdAndUpdate({_id:classID},{seatOccupied:classes.seatOccupied+1,clients:[...classes.clients,payload.userID]}) // increment seats occupied
         let user = await UserModel.findOne({_id:payload.userID});
+        let trainer = await UserModel.findOne({_id:classes.trainerID});
         await UserModel.findByIdAndUpdate({_id:payload.userID},{ $push: { classes: classes._id } });
-        mailOrderDetail(order,classes,user)
+        mailOrderDetail(order,classes,user,trainer)
         res.status(200).send({message:"Congratulations! Order successful, Order Details shared on your email.",order})   
     }catch(error){
         res.status(400).send({message:"Something went wrong",error:error.message})
