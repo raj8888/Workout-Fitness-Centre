@@ -13,11 +13,11 @@ let locationOrLink=document.getElementById("locationOrLink");
 let date_time=document.getElementById("date_time");
 locationOrLink.readOnly = true;
 
-venue.addEventListener("change",()=>{
+venue.addEventListener("input",()=>{
     if(venue.value=="offline"){
         locationOrLink.readOnly = false;
         locationOrLink.placeholder= "Enter City name";
-        locationOrLink.value= "Enter City name";
+        locationOrLink.value= "";
     }else{
         locationOrLink.readOnly = true;
         locationOrLink.placeholder= "Select Class Date & Time to generate class link";
@@ -25,14 +25,14 @@ venue.addEventListener("change",()=>{
     }
 })
 
-date_time.addEventListener("change",()=>{
+date_time.addEventListener("input",()=>{
     if(venue.value=="online"){
         locationOrLink.value= "https://us06web.zoom.us/j/9314210793";
     }
 })
 
 form.addEventListener("submit",(e)=>{
-    
+
     e.preventDefault();
 
     let date_time= form.date_time.value.split("T");
