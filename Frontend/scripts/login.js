@@ -7,7 +7,19 @@ log.addEventListener("click",()=>{
   let obj ={
     email:email.value,password:password.value
   }
-  loginUser(obj)
+  // Admin login static from login page - if admin credentials not working - login with any user or trainer credentials then go to inspect- application-session storage- then copy (loggedInUser- value and add it in below loggedInUser -variable);
+  if(obj.email=="admin@gmail.com" && obj.password=="admin"){
+    let loggedInUser={"_id":"642974f8036361a9aeb7c805","name":"Sarvesh Gupta","email":"sarveshgupta14@gmail.com","password":"$2b$05$7.qjtv0YZCmy4Agp2jel2OmeXo61eddMG2HuCUbVuQFZayOqpuR/6","country":"India","sex":"Male","role":"client","healthProblem":[],"classes":["6429766b036361a9aeb7c81a","6429bc8128f1f73bb4ef160a","6429c2218611effb438e0258"],"createdDate":"2-4-2023","createdTime":"12:28:40"}
+    sessionStorage.setItem("loggedInUser",JSON.stringify(loggedInUser))
+    swal({text: "Admin Login Successful", icon: "success", button: "ok", timer:1000})
+            .then(()=>{
+                window.location.assign("/frontend/pages/adminDashboard.html");              
+            })
+  }else{
+    // Normal user and trainer dyanamic login
+    loginUser(obj)
+  }
+
 })
 
 async function loginUser(obj){

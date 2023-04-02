@@ -21,6 +21,7 @@ a {
     display: flex;
     
     align-items: center;
+    z-index: 999 !important;
     
     justify-content: space-between;
     padding-right: 25px;

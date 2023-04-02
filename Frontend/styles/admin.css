@@ -1,0 +1,136 @@
+#container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+#filteration{
+    width: 20%;
+}
+h2{
+    margin: 30px;
+    text-align: center;
+}
+h4{
+    margin: 10px 0px;
+}
+hr{
+    border-top: 0 solid rgb(168, 168, 168);
+    margin-top: 10px;
+}
+.checkbox>div{
+    display: flex;
+    margin-top: 9px;
+}
+.checkbox>div>label{
+    margin-left: 5px;
+}
+#category{
+    padding: 12px;
+    border: 0.4px solid #f0f0f0;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+#filteration >div{
+    padding: 12px;
+}
+#category p{
+    padding-top:9px
+}
+
+/* Products */
+
+#products{
+    width: 75%;
+    padding: 10px;
+}
+#products_container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+}
+#product-count{
+    text-align: right;
+    margin-bottom: 20px;
+}
+#products-inner{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    padding: 8px;
+    text-align: left;
+    text-decoration: none;
+}
+#products-inner:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+#products-inner img{
+    width: 100%;
+    object-fit: cover;
+}
+#product-small-images{
+    display: flex;    
+    margin-top: 10px;
+}
+#product-small-images span{
+    width:20%;
+    padding: 3px;
+    margin: 3px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+#product-small-images span:hover{
+    box-shadow: rgba(196, 196, 196, 0.16) 0px 1px 4px, rgb(224, 224, 224) 0px 0px 0px 3px;
+}
+#product-title{
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    text-decoration: none;
+    color: inherit;
+}
+#products-inner:hover #product-title{
+    color:#0273ac;;
+    text-decoration: underline;
+}
+#product-price{
+    display: flex ;
+    justify-content: flex-start;
+    font-size: 15px;
+}
+#product-price p{
+    margin: 4px 4px;
+}
+#product-price-discounted{
+    color: #D22516;
+    font-weight: 600;
+}
+#product-price-orignal{
+    color: #6d6d6c;
+    text-decoration: line-through;
+}
+#product-price-dot{
+    color: #6d6d6c;
+}
+#product-price-discount{
+    color: #0f5d0a;
+}
+#product-buttons{
+    width: 95%;
+    margin:auto;
+}
+#buy-now, .btn-brown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 9px 0;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 2px;
+    background-color: #a55810;
+    cursor: pointer;
+}

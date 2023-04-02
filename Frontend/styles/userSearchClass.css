@@ -119,18 +119,18 @@ body{
 }
 }
 
-#allclassediv{
+#allclassediv, #allcusersediv ,#allordersdiv{
     margin-top: 2%;
 }
 
-#allclasstitle{
+#allclasstitle, #alluserstitle ,#allorderstitle{
     background-color:#b9d8d5;
     width: 100%;
     padding: 8px  0px;
      padding-left: 5px;
 }
 
-#allclassescard{
+#allclassescard, #alluserscard ,#allorderscard{
 margin-top: 10px;
 }
 
