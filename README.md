@@ -1,27 +1,25 @@
-# kind-stitch-7991
+# WorkOut.com
 
 Workout Fitness Center is a simple sports and wellness app where users can schedule a wellness class created by a wellness-certified trainer and certified trainers can create a wellness class and earn money from them.
 
-Netlify Deployed Link : https://velvety-starburst-b38fa3.netlify.app
-
-
-# TypeBattle.com
-
-TypeBattle is a multiplayer online browser-based typing game. In TypeBattle, players complete typing tests of various texts as fast as possible, competing against themselves or with other users online
 
 ## Features
 
 - Authentication
 - Authorization
 - Responsive
-- Cross platform
-
+- Mail Service
+- Booking a class
+- Create a class(Online / Offline)
+- Payment Feature
+- Google Oauth
+- Chat Functionality
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JavaScript 
+**Client:** HTML, CSS, JavaScript,Jquery
 
-**Server:** Node.js, Express.js, Socket.io
+**Server:** Node.js, Express.js, Nodemailer,WebSockets,Mongoose
 
 **Database:** MongoDB, Redis
 
@@ -30,13 +28,13 @@ TypeBattle is a multiplayer online browser-based typing game. In TypeBattle, pla
 Clone the project
 
 ```bash
-  git clone https://github.com/faraz412/acceptable-straw-3421
+  git clone https://github.com/raj8888/kind-stitch-7991
 ```
 
 Go to the project directory
 
 ```bash
-  cd acceptable-straw-3421
+  cd kind-stitch-7991
 ```
 
 Install dependencies
@@ -51,16 +49,19 @@ Start the server
   node index.js
 ```
 
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`key`
-
 `mongourl`
 
-`PORT`
+`port`
+
+`salt`
+
+`secretkey`
+
+`refreshSecretKey`
 
 
 ## API Reference
@@ -70,61 +71,69 @@ To run this project, you will need to add the following environment variables to
 ```http
   GET /api
 ```
-#### User Register
+
+#### User / Trainer Register
 
 ```http
   POST /api/user/register
 ```
-#### User Login
+
+#### User / Trainer Login
 
 ```http
   POST /api/user/login
 ```
-#### Admin Register
+
+#### All Classs
 
 ```http
-  POST /api/admin/register
+  GET /api/class/all
 ```
-#### Admin Login
+
+#### All Users
 
 ```http
-  POST /api/admin/login
+  GET /api/user/all
 ```
-#### All Content
+
+#### Create Class From Trainer Side
 
 ```http
-  GET /api/content/
+  POST /api/class/create
 ```
-#### Add Content
+
+#### Book Class From User Side
 
 ```http
-  POST /api/content/addcontent
+  POST /api/order/checkAvailablity
 ```
-#### Update Content
+
+#### Update Class (Trainer Only)
 
 ```http
-  PATCH /api/content/update/:id
+  PATCH /api/order/update/:id
 ```
-#### Delete Content
+
+#### Delete Class (Trainer Only)
 
 ```http
-  DELETE /api/content/delete/:id
+  DELETE /api/order/delete/:id
 ```
 
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/LhQOBsU.jpeg)
-![App Screenshot](https://i.imgur.com/PfAyWy4.jpeg)
-![App Screenshot](https://i.imgur.com/loiArEj.jpeg)
-
-
+![App Screenshot](./Frontend/Images/Classes_Images/aerobics1.jpg)
+![App Screenshot](./Frontend/Images/Classes_Images/yoga2.jpg)
+![App Screenshot](./Frontend/Images/Classes_Images/crossfit1.jpg)
 
 ## Demo
-https://type-battle.onrender.com/
+
+[https://velvety-starburst-b38fa3.netlify.app](https://velvety-starburst-b38fa3.netlify.app)
+
 ## Authors
 
-- [@DanteHaxor](https://github.com/DanteHaxor)
-- [@Abhinav068](https://github.com/Abhinav068)
-- [@shanukajain](https://github.com/shanukajain)
-- [@faraz412](https://github.com/faraz412)
 - [@sarveshgupta1997](https://github.com/sarveshgupta1997)
+- [@ajayjamage3](https://github.com/ajayjamage3)
+- [@raj8888](https://github.com/raj8888)
+- [@faisalpinitod](https://github.com/faisalpinitod)
+- [@ramsarraf11](https://github.com/ramsarraf11)
