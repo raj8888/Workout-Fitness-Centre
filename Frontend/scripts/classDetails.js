@@ -11,8 +11,8 @@ const urlParams = new URLSearchParams(window.location.search)
 const classId = urlParams.get("id")
 
 
-function toggleClassLinkVisibility(){
-    if(!loggedInUser.classes.includes(classId)) {
+function toggleClassLinkVisibility(classes){
+    if(!loggedInUser.classes.includes(classId) && classes.venue=="online") {
         // linkH4Value
         document.getElementById("linkH4Value").innerText="Class not booked yet.";
         // document.getElementById("linkH4Key").style.display="none";
@@ -145,7 +145,7 @@ async function  renderAllData(classes,trainerInfo){
     let id = event.target.dataset.id;
     window.location.assign(`./bookClass.html?id=${id}`)
     })
-    toggleClassLinkVisibility()
+    toggleClassLinkVisibility(classes)
 }
 
 
