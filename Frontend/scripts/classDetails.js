@@ -150,7 +150,7 @@ async function  renderAllData(classes,trainerInfo){
 
 
 function renderTrainerProfile(){
-    let prfileImg=["https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/8173423/pexels-photo-8173423.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/6975795/pexels-photo-6975795.jpeg?auto=compress&cs=tinysrgb&w=600",'https://images.pexels.com/photos/1978505/pexels-photo-1978505.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/2105493/pexels-photo-2105493.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/6551136/pexels-photo-6551136.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/9283300/pexels-photo-9283300.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/2085739/pexels-photo-2085739.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/207693/pexels-photo-207693.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/1756959/pexels-photo-1756959.jpeg?auto=compress&cs=tinysrgb&w=600']
+    let prfileImg=["../Images/Profile_Images/1680420864318.png","../Images/Profile_Images/1680420887007.png","../Images/Profile_Images/1680420927232.png","../Images/Profile_Images/1680420953188.png","../Images/Profile_Images/1680420980976.png","../Images/Profile_Images/1680421002568.png","../Images/Profile_Images/1680421096922.png"]
 
     let imgLink=getRandomItem(prfileImg)
     return imgLink
