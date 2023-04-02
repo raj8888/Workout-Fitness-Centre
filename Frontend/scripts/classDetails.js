@@ -72,7 +72,7 @@ async function  renderAllData(classes,trainerInfo){
    <div id="classalldesc">
       <div id="imgandjoinbtn">
        <div id="descimg">
-           <img src="https://classfit-assets-live.s3.amazonaws.com/backup/images/upload/ply/f58349d961a4faa8a6190157fe35b14d.jpg" alt="" id="trainerimg">
+           <img src=${renderTrainerProfile()} alt="" id="trainerimg">
        </div>
        <div id="descjoin">
            <button id="joinclassdesc" data-id=${classes._id}>Join Class</button>
