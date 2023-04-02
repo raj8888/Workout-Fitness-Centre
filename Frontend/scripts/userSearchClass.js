@@ -154,22 +154,22 @@ pricecomp.addEventListener("change",(event)=>{
 
 function renderImages(actname){
     let allImagesData={
-        yoga:["https://drive.google.com/file/d/1emSUc95Ms33BvWx2-8Wu8I_4QmHEsufb/view?usp=share_link","https://drive.google.com/file/d/14zFIuQZPW8uA6MT-FCB7FOv6_ImgjHoS/view?usp=share_link","https://drive.google.com/file/d/1cRgRZLeUYjWUwcdnzOP9ydVo2J4un4LF/view?usp=share_link"],
-        cardio:["https://drive.google.com/file/d/1Sxm8c777LPUeew6wCsK8k5bBIAdH6Z0G/view?usp=sharing","https://drive.google.com/file/d/1GVnmFNE9Qxm3as19WFRXje5Kxvwe221F/view?usp=share_link","https://drive.google.com/file/d/19-9Sx1H2VBXtfntVa-Vxaw_8JV5fepgk/view?usp=share_link"],
-        swimming:["https://drive.google.com/file/d/1J_VVjXaroZdH3RAAl_RB6YjvZz-Mnb9S/view?usp=share_link","https://drive.google.com/file/d/1QWfk32ZntKUnYbwyYIiKQnXZ16h_4DTB/view?usp=share_link","https://drive.google.com/file/d/1wBZDtqXwtmFQ6RkgGj2iEak7WviJrpkL/view?usp=share_link"],
-        running:["https://drive.google.com/file/d/19-9Sx1H2VBXtfntVa-Vxaw_8JV5fepgk/view?usp=share_link","https://drive.google.com/file/d/161Al8gMQ4EV_CHZXYXM-BaG73KeIM7oq/view?usp=share_link","https://drive.google.com/file/d/1czhS-gADet-u0IOyBOsu6w46ddOEGVXe/view?usp=share_link"],
-        zumba:["https://drive.google.com/file/d/1ZbNhZGjLZKjiRQ4lJxs_mlml_g0rRB5r/view?usp=share_link","https://drive.google.com/file/d/1P8XcLdd8FP2s4CCeBqxMvQcBKjvRS8dB/view?usp=share_link","https://drive.google.com/file/d/1pA3n8ne4E1rpzHCaQdVHod6IH0_soVvV/view?usp=share_link"],
-        aerobics:["https://drive.google.com/file/d/1Sxm8c777LPUeew6wCsK8k5bBIAdH6Z0G/view?usp=sharing","https://drive.google.com/file/d/1t6e-571wbWMl6hhLCCezW0xwBvbN5JYv/view?usp=share_link","https://drive.google.com/file/d/1dhGXOggX3vr_GfiExwoSxOrH55WnUshp/view?usp=share_link"],
-        ballet:["https://drive.google.com/file/d/1DLyCal_5GOTZkem9TdyVn6KerT-kT_QN/view?usp=share_link","https://drive.google.com/file/d/1wN4Xf027201YvUTSA6jybIhL7arW79AS/view?usp=share_link","https://drive.google.com/file/d/1jtS659fvSj9M_6xs3VA2Nkxbu4wgiTjV/view?usp=share_link"],
-        basketball:["https://drive.google.com/file/d/1pxL1PBSwQ6LooLwt9KziOgwzBIJyXJcX/view?usp=share_link","https://drive.google.com/file/d/1EZi_1A7bIKaVXo09obhz0WIuU5h9Pr0n/view?usp=share_link","https://drive.google.com/file/d/1YUilB_3TzfbqKVKjnyrlEeUiu0aoCIgC/view?usp=share_link"],
-        boxing:["https://drive.google.com/file/d/1GVnmFNE9Qxm3as19WFRXje5Kxvwe221F/view?usp=share_link","https://drive.google.com/file/d/1WEJn-NVWAXW512AqHlIzmyU0Tr_fleQP/view?usp=share_link","https://drive.google.com/file/d/1qKNYNtrTMv6WjR97zj3pBE0FMSwNtD0p/view?usp=share_link"],
-        crossfit:["https://drive.google.com/file/d/1AAxdK2gsPqM-aS2BNwza9JGANtLwuIJ5/view?usp=share_link","https://drive.google.com/file/d/1Ctr7emvn2bk0Le8Qzulz9G9vajleihv0/view?usp=share_link","https://drive.google.com/file/d/1iFO_-NJCcxaABIgRyx4S3O-nDqQif5dP/view?usp=share_link"],
-        cycling:["https://drive.google.com/file/d/1tFuPpiSG7epqu1V8V2ellUKmgjdq1iFL/view?usp=sharing","https://drive.google.com/file/d/16BWcKjQjagv9bBvN7tXlRNnsan3Z4k5J/view?usp=share_link","https://drive.google.com/file/d/16qdwJkb-9aZgwgsEHanmkaMRMjapBSlq/view?usp=share_link"],
-        football:["https://drive.google.com/file/d/19-9Sx1H2VBXtfntVa-Vxaw_8JV5fepgk/view?usp=share_link","https://drive.google.com/file/d/161Al8gMQ4EV_CHZXYXM-BaG73KeIM7oq/view?usp=share_link","https://drive.google.com/file/d/1czhS-gADet-u0IOyBOsu6w46ddOEGVXe/view?usp=share_link"],
-        kickboxing:["https://drive.google.com/file/d/1PASgPH_T777Ou1tJyJ_8KR2wkSprQ8GC/view?usp=share_link","https://drive.google.com/file/d/119TwDrzF_wwhnOsHvZXSVQiB_OnjPgiQ/view?usp=share_link","https://drive.google.com/file/d/19-9Sx1H2VBXtfntVa-Vxaw_8JV5fepgk/view?usp=share_link"],
-        singing:["https://drive.google.com/file/d/1Cu6wEyAj0APBzc_hMnX26tCO5MEP2rBO/view?usp=share_link","https://drive.google.com/file/d/1vxj0FfeJQp1SExqIHhCUQI4qjPNYuM5B/view?usp=share_link","https://drive.google.com/file/d/1z4PNOF1oMGlga_qosyC1N8Jcza-8P_N3/view?usp=share_link"],
-        weighttraining:["https://drive.google.com/file/d/1iorRCNQEc_iA7SsarxH-7GQdWl0xU9xG/view?usp=share_link","https://drive.google.com/file/d/1rvrvPus9EgND4pBneSECKERqCSSU2O8d/view?usp=share_link","https://drive.google.com/file/d/1BUPuwM9wrA_9li3YepB64Jk1Qycy03mI/view?usp=share_link"],
-        dance:["https://drive.google.com/file/d/1h6xbZtit2_C_q452YgDj_lLvp_4ArFYD/view?usp=share_link","https://drive.google.com/file/d/1loxeLy8DLaGFKvgYU__h7fOOf-rz7RtQ/view?usp=share_link","https://drive.google.com/file/d/1loxeLy8DLaGFKvgYU__h7fOOf-rz7RtQ/view?usp=share_link"]
+        yoga:["../Images/Classes_Images/yoga1.jpg","../Images/Classes_Images/yoga2.jpg","../Images/Classes_Images/yoga3.jpg"],
+        cardio:["../Images/Classes_Images/boxing1.jpg","../Images/Classes_Images/aerobics2.jpg","../Images/Classes_Images/crossfit1.jpg"],
+        swimming:["../Images/Classes_Images/swimming1.jpg","../Images/Classes_Images/swimming2.jpg","../Images/Classes_Images/swimming3.jpg"],
+        running:["../Images/Classes_Images/football1.jpg","../Images/Classes_Images/football2.jpg","../Images/Classes_Images/football3.jpg"],
+        zumba:["../Images/Classes_Images/zumba1.jpg","../Images/Classes_Images/zumba2.jpg","../Images/Classes_Images/zumba3.jpg"],
+        aerobics:["../Images/Classes_Images/aerobics1.jpg","../Images/Classes_Images/aerobics2.jpg","../Images/Classes_Images/aerobics3.jpg"],
+        ballet:["../Images/Classes_Images/ballet1.jpg","../Images/Classes_Images/ballet2.jpg","../Images/Classes_Images/ballet3.jpg"],
+        basketball:["../Images/Classes_Images/basketball1.jpg","../Images/Classes_Images/basketball2.jpg","../Images/Classes_Images/basketball3.jpg"],
+        boxing:["../Images/Classes_Images/boxing1.jpg","../Images/Classes_Images/boxing3.jpg","../Images/Classes_Images/boxing2.jpg"],
+        crossfit:["../Images/Classes_Images/crossfit1.jpg","../Images/Classes_Images/crossfit3.jpg","../Images/Classes_Images/crossfit2.jpg"],
+        cycling:["../Images/Classes_Images/cycling1.jpg","../Images/Classes_Images/cycling2.jpg","../Images/Classes_Images/cycling3.jpg"],
+        football:["../Images/Classes_Images/football1.jpg","../Images/Classes_Images/football2.jpg","../Images/Classes_Images/football3.jpg"],
+        kickboxing:["../Images/Classes_Images/kickboxing1.jpg","../Images/Classes_Images/kickboxing2.jpg","../Images/Classes_Images/kickboxing3.jpg"],
+        singing:["../Images/Classes_Images/singing1.jpg","../Images/Classes_Images/singing3.jpg","../Images/Classes_Images/singing2.jpg"],
+        weighttraining:["../Images/Classes_Images/weighttraining1.jpg","../Images/Classes_Images/weighttraining2.jpg","../Images/Classes_Images/weighttraining3.jpg"],
+        dance:["../Images/Classes_Images/dance1.jpg","../Images/Classes_Images/dance2.jpg","../Images/Classes_Images/dance3.jpg"]
     }
     // let allImagesData={
     //     yoga:["https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/5384538/pexels-photo-5384538.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/6698513/pexels-photo-6698513.jpeg?auto=compress&cs=tinysrgb&w=600"],
