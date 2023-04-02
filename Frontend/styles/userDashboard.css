@@ -23,11 +23,13 @@ a {
     align-items: center;
     
     justify-content: space-between;
-    
     padding-right: 25px;
-    
-    
-    /* background-color: teal; */
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    width: 99%;
+    margin: auto;
+    background-color:white;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
  
     
@@ -140,7 +142,7 @@ a {
        .hamburger {
        
        display: none;
-       
+       margin-right: 10px;
        font-size: 24px;
        
        user-select: none;
@@ -169,7 +171,7 @@ a {
            .menu li:hover {
            
            display: inline-block;
-           
+          
            background-color:#4c9e9e;
            
            transition: 0.3s ease;
@@ -177,7 +179,6 @@ a {
            }
            
            .menu li + li {
-           
            margin-top: 12px;
            
            }
@@ -191,7 +192,7 @@ a {
            .hamburger {
            
            display: block;
-           
+                  
            }
            
            .dropdown {
@@ -256,7 +257,7 @@ a {
      .hamburger {
      
      display: block;
-     
+     margin-right: 10px;
      }
      
      .dropdown {
