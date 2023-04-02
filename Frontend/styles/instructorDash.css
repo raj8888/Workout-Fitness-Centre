@@ -1,4 +1,4 @@
-* {
+/* /* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -129,17 +129,37 @@ input[type=checkbox] {
 }
 
 .main1a {
+    width: 50%;
     border: 1px solid red;
+    text-align: center;
 }
 .main1a div h1{
     font-family: "Raleway",sans-serif;
     font-size: 35px;
     font-weight: 500;
     color: #5e5873;
+    padding-bottom: 5px;
+    text-align: left;
 }
 
 .main1b {
+    width: 50%;
     border: 1px solid brown;
+    text-align: center;
+}
+
+#class-structure{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bussiness{
+    text-align: center;
 }
 
 
