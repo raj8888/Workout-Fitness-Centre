@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/user",userRouter);
-// app.use(authenticator)
+app.use(authenticator)
 app.use("/class",classesRouter);
 app.use("/order",ordersRouter);
 

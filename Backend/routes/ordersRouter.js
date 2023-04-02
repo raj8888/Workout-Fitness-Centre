@@ -50,6 +50,7 @@ ordersRouter.get("/user/:id", async (req,res)=>{
 // Order Check Availablity
 ordersRouter.post("/checkAvailablity", async (req,res)=>{
     let payload = req.body;
+    // console.log(payload)
     let classID = payload.classID;
     try{
         let classes = await ClassesModel.findOne({_id:classID});
