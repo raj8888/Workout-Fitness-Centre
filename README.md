@@ -13,7 +13,7 @@ Workout Fitness Center is a simple sports and wellness app where users can sched
 - Create a class(Online / Offline)
 - Payment Feature
 - Google Oauth
-- Chat Functionality
+
 
 ## Tech Stack
 
