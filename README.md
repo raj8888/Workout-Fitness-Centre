@@ -19,7 +19,7 @@ Workout Fitness Center is a simple sports and wellness app where users can sched
 
 **Client:** HTML, CSS, JavaScript,Jquery
 
-**Server:** Node.js, Express.js, Nodemailer,WebSockets,Mongoose
+**Server:** Node.js, Express.js, Nodemailer,Mongoose
 
 **Database:** MongoDB, Redis
 
